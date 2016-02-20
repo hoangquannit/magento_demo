@@ -1,0 +1,33 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1444188370;s:6:"expire";i:1444274770;s:4:"tags";s:221:"ce1_FPC,ce1_BLOCK_HTML,ce1_CATALOG_PRODUCT_418,ce1_CATALOG_CATEGORY_4,ce1_CATALOG_CATEGORY_10,ce1_CATALOG_CATEGORY_11,ce1_CATALOG_PRODUCT_406,ce1_CATALOG_CATEGORY_5,ce1_CATALOG_CATEGORY_14,ce1_CATALOG_CATEGORY_40,ce1_MAGE";}
+<div class="block block-list block-viewed">
+    <div class="block-title">
+        <strong><span>Recently Viewed Products</span></strong>
+    </div>
+    <div class="block-content">
+        <ol id="recently-viewed-items" class="mini-products-list">
+                    <li class="item">
+                <a href="http://magentodemo.local/tori-tank-546.html">
+                    <span class="product-image"><img src="http://magentodemo.local/media/catalog/product/cache/1/thumbnail/50x50/9df78eab33525d08d6e5fb8d27136e95/w/b/wbk003t.jpg" width="50" height="50" alt="" /></span>
+                </a>
+                <div class="product-details">
+                    <p class="product-name">
+                        <a href="http://magentodemo.local/tori-tank-546.html">
+                            Tori Tank                        </a>
+                    </p>
+                </div>
+            </li>
+                    <li class="item">
+                <a href="http://magentodemo.local/linen-blazer-538.html">
+                    <span class="product-image"><img src="http://magentodemo.local/media/catalog/product/cache/1/thumbnail/50x50/9df78eab33525d08d6e5fb8d27136e95/m/s/msj012t_2.jpg" width="50" height="50" alt="" /></span>
+                </a>
+                <div class="product-details">
+                    <p class="product-name">
+                        <a href="http://magentodemo.local/linen-blazer-538.html">
+                            Linen Blazer                        </a>
+                    </p>
+                </div>
+            </li>
+                </ol>
+        <script type="text/javascript">decorateList('recently-viewed-items');</script>
+    </div>
+</div>
