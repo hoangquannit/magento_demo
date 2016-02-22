@@ -3,13 +3,6 @@
 $display_from_date = Mage::getStoreConfig("countdown/date_promotions/from_date");
 
 $display_to_date = Mage::getStoreConfig("countdown/date_promotions/to_date");
-//if (!empty($display_from_date) && !empty($display_to_date)) {
-//    $date_convert = DateTime::createFromFormat('d/m/Y', $display_to_date);
-//    $display_to_date_convert =  $date_convert->format('Y/m/d');
-//    $date_convert = DateTime::createFromFormat('d/m/Y', $display_from_date);
-//    $display_from_date_convert = $date_convert->format('Y/m/d');
-//}
-
 //========== config in admin : date display christmas promotions popup
 $display_date = Mage::getModel('core/date')->date('Y-m-d');
 $three_day_ago = Mage::getModel('core/date')->date('Y-m-d', strtotime('-3 day'));
@@ -19,7 +12,6 @@ $after_one_day = Mage::getModel('core/date')->date('Y-m-d', strtotime('+1 day'))
 
 //========= date for filter collection christmas products.
 $date = strtotime($display_to_date); // count to christmas
-//var_dump($display_date); die();
 //========== date for count down
 if( !empty($display_from_date) && !empty($display_to_date) &&
     strtotime($display_from_date) <= strtotime($display_date)
@@ -279,6 +271,6 @@ if( !empty($display_from_date) && !empty($display_to_date) &&
 
         }
     </style>
-<?php } ?> <!--end check from date and to date -->
 </div>
 <a href="#christmas-promotion-popup" id="click-christmas-popup" style="display: none">click</a>
+<?php } ?> <!--end check from date and to date -->
