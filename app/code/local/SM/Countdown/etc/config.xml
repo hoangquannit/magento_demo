@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Countdown>
+            <version>0.1.0</version>
+        </SM_Countdown>
+    </modules>
+    <global>
+        <helpers>
+            <sm_countdown>
+                <class>SM_Countdown_Helper</class>
+            </sm_countdown>
+        </helpers>
+        <blocks>
+            <sm_countdown>
+                <class>SM_Countdown_Block</class>
+            </sm_countdown>
+        </blocks>
+        <resources>
+            <sm_countdown_setup>
+                <setup>
+                    <module>SM_Countdown</module>
+                    <class>SM_Countdown_Model_Resource_Setup</class>
+                </setup>
+            </sm_countdown_setup>
+        </resources>
+    </global>
+    <default>
+        <countdown>
+            <countdown>
+                <time>
+year  	: 2014,  //The target date's year
+month 	: 12,    //The target date's month
+day   	: 24,    //The target date's day
+hour  	: 12,    //The target date's hour
+ampm  	: "pm",	 //Is the hour refering to AM (early/day) or PM (late/night)?
+minute	: 0,     //The target date's minutes
+second	: 0      //The target date's seconds
+                </time>
+            </countdown>
+        </countdown>
+    </default>
+</config>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <!--
+    Default layout, loads most of the pages
+    -->
+    <default>
+        <reference name="root">
+             <reference name="head">
+                 <action method="addItem"><type>skin_js</type><name>countdown/countdown.js</name></action>
+                 <action method="addJs"><script>fancybox/jquery.fancybox.pack.js</script></action>
+                 <action method="addCss"><stylesheet>facybox/jquery.fancybox.css</stylesheet></action>
+             </reference>
+        </reference>
+
+        <reference name="footer">
+            <block type="core/template" name="countdown_promo" template="ml/countdown.phtml"/>
+        </reference>
+    </default>
+
+</layout>
