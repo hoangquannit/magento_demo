@@ -1,5 +1,5 @@
-.count-down-christmas-promo {
-    background: url(../countdown/images/background_christmas_promo.jpg) no-repeat top center;
+.count-down-countdown-promo {
+    background-color: #1b092b;
     max-width:960px;
     margin:auto;
     padding:20px 30px 35px;
@@ -12,22 +12,18 @@
     width:24px;
     height:24px;
 }
-.aldi-christmas-promo-logo {
-    text-align:left;
-    float:left;
-}
 .count-down {
     margin:auto;
     text-align:center;
     width:435px;
 }
-.text-top-christmas {
+.text-top-countdown {
     height:150px;
     font-size:0px;
     width:100%;
     clear:both;
 }
-.text-top-christmas h2, .text-top-christmas h3 {
+.text-top-countdown h2, .text-top-countdown h3 {
     font-size:0px;
 }
 .text-above-countdown h4 {
@@ -38,40 +34,40 @@
 .text-above-countdown {
     margin:20px 0px 20px;
 }
-.christmas-product-list-ago, .christmas-product-list-feature, .christmas-product-list-feature {
+.countdown-product-list-ago, .countdown-product-list-feature, .countdown-product-list-feature {
     max-width:530px;
     clear:both;
     margin:auto;
     display:block;
 }
-.christmas-product-list-ago .aldigridproductouterbox, .christmas-product-list-feature .aldigridproductouterbox, .christmas-product-current .aldigridproductouterbox {
+.countdown-product-list-ago .aldigridproductouterbox, .countdown-product-list-feature .aldigridproductouterbox, .countdown-product-current .aldigridproductouterbox {
     width:135px;
     min-height:135px;
     position:relative;
     box-sizing:border-box;
 }
-.christmas-product-list-ago .image-box-christmas{
+.countdown-product-list-ago .image-box-countdown{
     width:134px;
     height:135px;
     display:block;
     padding-top:1px;
 }
-.count-down-christmas-promo .item {
+.count-down-countdown-promo .item {
     margin-right:59px;
     float:none;
     display:inline-block;
 }
-.count-down-christmas-promo .item:last-child {
+.count-down-countdown-promo .item:last-child {
     margin-right:0px;
 }
-.count-down-christmas-promo .item .aldigridproductouterbox {
+.count-down-countdown-promo .item .aldigridproductouterbox {
     padding-right:0px;
 }
-.count-down-christmas-promo .aldigridproductouterbox {
+.count-down-countdown-promo .aldigridproductouterbox {
     position:relative;
     margin-bottom:5px;
 }
-.count-down-christmas-promo .aldigridproductouterbox .date-christmas {
+.count-down-countdown-promo .aldigridproductouterbox .date-countdown {
     position:absolute;
     top:50%;
     left:50%;
@@ -81,13 +77,13 @@
     transform:translate(-50%,-50%);
     /* margin-left:-9px; */
 }
-.christmas-product-list-ago .image-box-christmas {
-    background:url(../images/image-box-christmas.png) no-repeat center center;
+.countdown-product-list-ago .image-box-countdown {
+    background:url(../images/image-box-countdown.png) no-repeat center center;
 }
-.christmas-product-list-ago .image-box-christmas  a, .christmas-product-list-feature .aldigridproductouterbox a {
+.countdown-product-list-ago .image-box-countdown  a, .countdown-product-list-feature .aldigridproductouterbox a {
     display:block;
 }
-.christmas-product-list-ago .image-box-christmas a img {
+.countdown-product-list-ago .image-box-countdown a img {
     background: #fff none repeat scroll 0 0;
     border-radius: 200px;
     filter: grayscale(100%);
@@ -96,29 +92,29 @@
     opacity: 0.4;
     width: 125px;
 }
-.christmas-product-current {
+.countdown-product-current {
     max-width:470px;
     margin:auto;
 }
-.date-christmas {
+.date-countdown {
     font-family: 'zamenhof-solidregular';
     font-size:42px;
     color:#5a5a5a;
 }
-.christmas-product-list-feature .item {
+.countdown-product-list-feature .item {
     height:182px;
     position:relative
 
 }
-.christmas-product-current .aldigridproductouterbox {
+.countdown-product-current .aldigridproductouterbox {
     background: rgba(0, 0, 0, 0) url("../images/bg_day11.png") no-repeat scroll center top;
     width: 455px;
     padding: 0;
 }
-.christmas-product-current .item {
+.countdown-product-current .item {
     margin-top:62px;
 }
-.christmas-product-current .item img {
+.countdown-product-current .item img {
     width:326px;
     height:326px;
     border-radius:100%;
@@ -158,7 +154,7 @@
     float:left;
     line-height:91px;
 }
-.christmas-product-current .aldigridproductouterbox .date-christmas {
+.countdown-product-current .aldigridproductouterbox .date-countdown {
     left: 50%;
     margin-left: 0px;
     top: -64px;
@@ -168,7 +164,7 @@
     transform: translate(-50%, 0);
     color:#bb8f23;
 }
-.christmas-buynow {
+.countdown-buynow {
     background: rgba(0, 0, 0, 0) url("../images/bg_button_chrismas.png") no-repeat scroll center top !important;
     display: block;
     height: 57px;
@@ -179,41 +175,41 @@
     width: 255px;
     z-index: 99;
 }
-.christmas-buynow a {
+.countdown-buynow a {
     font-size:18px;
     font-weight:bold;
     color:#fff;
 }
-.christmas-detail-product {
+.countdown-detail-product {
     text-align:center;
     float:left;
     clear:both;
     width:100%;
 }
-.christmas-detail-product h2 a, .christmas-detail-product h3 a {
+.countdown-detail-product h2 a, .countdown-detail-product h3 a {
     color: #fff;
     font-size: 16px;
     text-align: center;
     display: block;
     float: none;
 }
-.christmas-detail-product h2 {
+.countdown-detail-product h2 {
     font-weight:bold;
     padding-top:10px;
 }
-.christmas-detail-product h3 {
+.countdown-detail-product h3 {
     width:100%;
     float:left;
     text-align:center;
 }
-.christmas-product-list-feature {
+.countdown-product-list-feature {
     padding-top:15px;
 }
-.christmas-product-list-feature .aldigridproductouterbox {
+.countdown-product-list-feature .aldigridproductouterbox {
     background:url(../images/bg_number.png) no-repeat center top;
 
 }
-.christmas-product-list-feature .item .day-of-product-feature {
+.countdown-product-list-feature .item .day-of-product-feature {
     background-position:center bottom;
     background-repeat:no-repeat;
     float:left;
@@ -227,12 +223,12 @@
     width: 130px;
 }
 
-.christmas-product-list-feature .aldigridproductouterbox .date-christmas {
+.countdown-product-list-feature .aldigridproductouterbox .date-countdown {
     margin-left:0px;
     color:#bb8f23;
     font-size:42px;
 }
-.christmas-footer {
+.countdown-footer {
     clear:both;
     /* padding-top:50px; */
 }
@@ -249,24 +245,24 @@
         margin:0px auto;
     }
 }
-.christmas-footer img {
+.countdown-footer img {
     max-width: 100%;
     margin: 0 auto;
 }
 
-.christmas-product-list-ago:after, .christmas-product-list-feature:after, .christmas-product-list-feature:after, h3.product-name:after , .footer-the-perfect:after{
+.countdown-product-list-ago:after, .countdown-product-list-feature:after, .countdown-product-list-feature:after, h3.product-name:after , .footer-the-perfect:after{
     clear:both;content:".";display:block;font-size:0;height:0;line-height:0;overflow:hidden;
 }
-.christmas-promotions-content{width: 960px!important;}
-.christmas-promotions-content .fancybox-inner{width: 960px!important;}
-.christmas-product-list-ago .image-box-christmas a {
+.countdown-promotions-content{width: 960px!important;}
+.countdown-promotions-content .fancybox-inner{width: 960px!important;}
+.countdown-product-list-ago .image-box-countdown a {
     border-radius: 200px;
     height: 130px;
     overflow: hidden;
     width: 130px;
     margin: 2.5px;
 }
-.christmas-product-current .image-box-christmas .product-image {
+.countdown-product-current .image-box-countdown .product-image {
     border-radius: 200px;
     display: block;
     height: 335px;
@@ -277,7 +273,7 @@
     width: 335px;
 }
 
-.christmas-product-current .item img {
+.countdown-product-current .item img {
     height: 400px;
     margin-left: 0;
     margin-top: -25px;

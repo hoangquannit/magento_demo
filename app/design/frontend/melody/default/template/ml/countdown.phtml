@@ -3,22 +3,22 @@
 $display_from_date = Mage::getStoreConfig("countdown/date_promotions/from_date");
 
 $display_to_date = Mage::getStoreConfig("countdown/date_promotions/to_date");
-//========== config in admin : date display christmas promotions popup
+//========== config in admin : date display countdown promotions popup
 $display_date = Mage::getModel('core/date')->date('Y-m-d');
 $three_day_ago = Mage::getModel('core/date')->date('Y-m-d', strtotime('-3 day'));
 $three_day_feature = Mage::getModel('core/date')->date('Y-m-d', strtotime('+3 day'));
 $before_one_day = Mage::getModel('core/date')->date('Y-m-d', strtotime('-1 day'));
 $after_one_day = Mage::getModel('core/date')->date('Y-m-d', strtotime('+1 day'));
 
-//========= date for filter collection christmas products.
-$date = strtotime($display_to_date); // count to christmas
+//========= date for filter collection countdown products.
+$date = strtotime($display_to_date); // count to countdown
 //========== date for count down
 if( !empty($display_from_date) && !empty($display_to_date) &&
     strtotime($display_from_date) <= strtotime($display_date)
     && strtotime($display_date) <= strtotime($display_to_date)) {
 //============ display popup from $display_from_date to $display_to_date.
 ?>
-<div id="christmas-promotion-popup" class="count-down-christmas-promo" style="display: none">
+<div id="countdown-promotion-popup" class="count-down-countdown-promo" style="display: none">
 <?php    if($date){
         $year = date("Y",$date);
         $month = date("m",$date);
@@ -26,13 +26,8 @@ if( !empty($display_from_date) && !empty($display_to_date) &&
         $hour = date("H",$date);
         $minute = date("i",$date);
         ?>
-        <div class="christmas-promotions">
-        <img class="aldi-christmas-promo-logo" src="/images/christmas-logo.png" alt="christmas logo">
-        <div class="christmas-promotions-top">
-            <div class="text-top-christmas">
-                <h3 class="top-deals"><?php echo $this->__('18 Deals');?></h3>
-                <h2 class="text-of-christmast"><?php echo $this->__('Of Christmas');?></h2>
-            </div>
+        <div class="countdown-promotions">
+        <div class="countdown-promotions-top">
             <div class="count-down">
                 <script type="text/javascript">
                     var Countdown<?php echo rand(100,999); ?> = new Countdown({
@@ -50,9 +45,6 @@ if( !empty($display_from_date) && !empty($display_to_date) &&
                     });
                 </script>
             </div>
-            <div class="text-above-countdown">
-                <h4><?php echo $this->__('Till Christmas');?></h4>
-            </div>
         </div>
     <?php } ?>
     <?php $checkDate = null;$checkDate2 = null;$checkDate3 = null;
@@ -61,58 +53,46 @@ if( !empty($display_from_date) && !empty($display_to_date) &&
     <?php
     $_products_three_day_before = Mage::getModel('catalog/product')->getCollection()
         ->addFieldToFilter('countdown_promo',array('lteq'=>$before_one_day))
+        ->addFieldToFilter('countdown_promo',array('gteq'=>$three_day_ago))
         ->addAttributeToSort('countdown_promo', 'asc')
         ->addAttributeToSelect('image');
-    if(strtotime($display_from_date_convert)> strtotime($three_day_ago))
-        $_products_three_day_before->addFieldToFilter('countdown_promo',array('gteq'=>$display_from_date_convert));
-    else
-        $_products_three_day_before->addFieldToFilter('countdown_promo',array('gteq'=>$three_day_ago));
     $_products_current = Mage::getModel('catalog/product')->getCollection()
         ->addFieldToFilter('countdown_promo',array('eq'=>$display_date))
-        ->addAttributeToSelect('brand')
         ->addAttributeToSelect('name')
         ->addAttributeToSelect('price')
         ->addAttributeToSelect('image');
-    $_products_three_day_after = Mage::getModel('catalog/product')->getCollection()
-        ->addFieldToFilter('countdown_promo',array('gteq'=>$after_one_day))
-        ->addAttributeToSort('countdown_promo', 'asc');
-    if(strtotime($display_to_date_convert) > strtotime($three_day_feature))
-        $_products_three_day_after->addFieldToFilter('countdown_promo',array('lteq'=>$three_day_feature));
-    else
-        $_products_three_day_after->addFieldToFilter('countdown_promo',array('lteq'=>$display_to_date_convert));
-
     ?>
-    <div class="widget widget-christmas-products">
-        <div class="widget-products-christmas-promotions">
-<!--            <ul class="christmas-product-list-ago">-->
-<!--                --><?php //foreach ($_products_three_day_before as $_product): ?>
-<!--                    --><?php //if(strtotime($checkDate) != strtotime($_product->getChristmasPromo())):?>
-<!--                        <li class="item" >-->
-<!--                            --><?php //$_product = Mage::getModel('catalog/product')->load($_product->getId()); ?>
-<!--                            <div class="aldigridproductouterbox">-->
-<!--                                <div class="image-box-christmas">-->
-<!--                                    <a href="--><?php //echo $_product->getProductUrl() ?><!--" title="--><?php //echo $this->stripTags($_product->getName(), null, true) ?><!--" class="product-image">-->
-<!--                                        <img src="--><?php //echo $this->helper('catalog/image')->init($_product, 'image')->constrainOnly(TRUE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(100,125); ?><!--" width="100" height="100" alt="--><?php //echo $this->stripTags($_product->getName(), null, true) ?><!--" />-->
-<!--                                    </a>-->
-<!--                                </div>-->
-<!--                                <div class="date-christmas">-->
-<!--                                    <a href="--><?php //echo $_product->getProductUrl() ?><!--" title="--><?php //echo $this->stripTags($_product->getName(), null, true) ?><!--" class="product-image">-->
-<!--                                        --><?php //echo date('d', strtotime($_product->getChristmasPromo()));?>
-<!--                                    </a>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        --><?php //$checkDate = $_product->getChristmasPromo(); ?>
-<!--                    --><?php //endif;?>
-<!--                --><?php //endforeach;?>
-<!--            </ul>-->
-            <ul class="christmas-product-current">
-                <?php foreach ($_products_current as $_product): ?>
-<!--                    --><?php //if(strtotime($checkDate2) != strtotime($_product->getChristmasPromo())):?>
+    <div class="widget widget-countdown-products">
+        <div class="widget-products-countdown-promotions">
+            <ul class="countdown-product-list-ago">
+                <?php foreach ($_products_three_day_before as $_product): ?>
+                    <?php if(strtotime($checkDate) != strtotime($_product->getCountdownPromo())):?>
                         <li class="item" >
                             <?php $_product = Mage::getModel('catalog/product')->load($_product->getId()); ?>
                             <div class="aldigridproductouterbox">
-                                <div class="image-box-christmas">
+                                <div class="image-box-countdown">
+                                    <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>" class="product-image">
+                                        <img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->constrainOnly(TRUE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(100,125); ?>" width="100" height="100" alt="<?php echo $this->stripTags($_product->getName(), null, true) ?>" />
+                                    </a>
+                                </div>
+                                <div class="date-countdown">
+                                    <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>" class="product-image">
+                                        <?php echo date('d', strtotime($_product->getCountdownPromo()));?>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <?php $checkDate = $_product->getCountdownPromo(); ?>
+                    <?php endif;?>
+                <?php endforeach;?>
+            </ul>
+            <ul class="countdown-product-current">
+                <?php foreach ($_products_current as $_product): ?>
+                    <?php if(strtotime($checkDate2) != strtotime($_product->getCountdownPromo())):?>
+                        <li class="item" >
+                            <?php $_product = Mage::getModel('catalog/product')->load($_product->getId()); ?>
+                            <div class="aldigridproductouterbox">
+                                <div class="image-box-countdown">
                                     <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>" class="product-image">
                                         <img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->constrainOnly(TRUE)->keepAspectRatio(TRUE)->keepFrame(FALSE)->resize(326); ?>" width="100" height="100" alt="<?php echo $this->stripTags($_product->getName(), null, true) ?>" />
                                     </a>
@@ -125,12 +105,12 @@ if( !empty($display_from_date) && !empty($display_to_date) &&
                                     <span><span class="price-current"><?php echo $currency.$whole;?></span><sup><?php echo '.'.$decimal;?></sup></span>
 
                                 </div>
-                                <div class="christmas-buynow">
+                                <div class="countdown-buynow">
                                     <a href="<?php echo $_product->getProductUrl(); ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>" class="product-image">
                                         <span><?php echo $this->__('Buy Now');?></span>
                                     </a>
                                 </div>
-                                <div class="christmas-detail-product">
+                                <div class="countdown-detail-product">
                                     <h3 class="product-name">
                                         <a href="<?php echo $_product->getProductUrl() ?>"
                                            title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
@@ -138,50 +118,22 @@ if( !empty($display_from_date) && !empty($display_to_date) &&
                                         </a>
                                     </h3>
                                 </div>
-<!--                                <div class="date-christmas">-->
-<!--                                    <span>--><?php //echo $this->__('Day');?><!--</span>-->
-<!--                                    <span>--><?php //echo date('d', strtotime($_product->getCountdownPromo()));?><!--</span>-->
-<!--                                </div>-->
                             </div>
                         </li>
-<!--                        --><?php //$checkDate2 = $_product->getChristmasPromo(); ?>
-<!--                    --><?php //endif;?>
+                        <?php $checkDate2 = $_product->getCountdownPromo(); ?>
+                    <?php endif;?>
                 <?php endforeach;?>
             </ul>
-<!--            <ul class="christmas-product-list-feature">-->
-<!--                --><?php //foreach ($_products_three_day_after as $_product): ?>
-<!--                    --><?php //if(strtotime($checkDate3) != strtotime($_product->getChristmasPromo())):?>
-<!--                        <li class="item --><?php
-//                        if(strtotime($_product->getChristmasPromo()) == strtotime($after_one_day)){
-//                            echo 'tomorrow';
-//                        }
-//                        else {echo strtolower(date('l', strtotime($_product->getChristmasPromo())));}
-//                        ?><!--" >-->
-<!--                            <div class="aldigridproductouterbox">-->
-<!---->
-<!--                                <div class="date-christmas">-->
-<!--                                    --><?php //echo date('d', strtotime($_product->getChristmasPromo()));?>
-<!--                                </div>-->
-<!--                                --><?php //if(strtotime($_product->getChristmasPromo()) == strtotime($after_one_day)):?><!--  <div class="day-of-product-feature"> --><?php //echo $this->__('Tomorrow');?><!--</div>-->
-<!--                                --><?php //else:?>
-<!--                                    <div class="day-of-product-feature">--><?php //echo date('l', strtotime($_product->getChristmasPromo()));?><!--</div>-->
-<!--                                --><?php //endif;?>
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        --><?php //$checkDate3 = $_product->getChristmasPromo(); ?>
-<!--                    --><?php //endif;?>
-<!--                --><?php //endforeach;?>
-<!--            </ul>-->
+
         </div>
     </div>
-    <div class="footer-the-perfect"><img src="<?php echo $this->getSkinUrl('images/the-perfect-text.png');?>" alt="footer-promo-perfect"/></div>
     </div>
 
     <script type="text/javascript">
 
-        if(!Mage.Cookies.get('christmas')){
+        if(!Mage.Cookies.get('countdown')){
             // cookie not set
-            Mage.Cookies.set('christmas', 'now');
+            Mage.Cookies.set('countdown', 'now');
             var show = true;
             //console.log('setting cookie : '+show);
         }else{
@@ -212,8 +164,8 @@ if( !empty($display_from_date) && !empty($display_to_date) &&
             if( jQuery(window).width() < 1200) var width = '100%';
             else if( jQuery(window).width()> 1899) var  width = '51,9%';
             else var width = '72%';
-           // if(show || $_GET['christmas']){
-                jQuery("#click-christmas-popup").fancybox({
+           // if(show || $_GET['countdown']){
+                jQuery("#click-countdown-popup").fancybox({
                     padding: 0,
                     hideOnContentClick: true,
                     closeBtn : true,
@@ -232,45 +184,11 @@ if( !empty($display_from_date) && !empty($display_to_date) &&
                     closeEffect : 'none'
                 });
          //   }
-            jQuery("#click-christmas-popup").trigger('click');
+            jQuery("#click-countdown-popup").trigger('click');
 
         });
 
     </script>
-    <style>
-        .christmas-product-list-feature .tomorrow .day-of-product-feature {
-            background-image:url(<?php echo $this->getSkinUrl('images/text_tomorrow.png'); ?>);
-            width:111px;
-        }
-        .christmas-product-list-feature .monday	.day-of-product-feature {
-            background-image:url(<?php echo $this->getSkinUrl('images/text_monday.png'); ?>);
-
-        }
-        .christmas-product-list-feature .tuesday .day-of-product-feature {
-            background-image:url(<?php echo $this->getSkinUrl('images/text_tuesday.png'); ?>);
-
-        }
-        .christmas-product-list-feature .wednesday .day-of-product-feature {
-            background-image:url(<?php echo $this->getSkinUrl('images/text_wednesday.png'); ?>);
-
-        }
-        .christmas-product-list-feature .thursday .day-of-product-feature {
-            background-image:url(<?php echo $this->getSkinUrl('images/text_thursday.png'); ?>);
-
-        }
-        .christmas-product-list-feature .friday	.day-of-product-feature {
-            background-image:url(<?php echo $this->getSkinUrl('images/text_friday.png'); ?>);
-
-        }
-        .christmas-product-list-feature .saturday .day-of-product-feature {
-            background-image:url(<?php echo $this->getSkinUrl('images/text_saturday.png'); ?>);
-
-        }
-        .christmas-product-list-feature .sunday	.day-of-product-feature {
-            background-image:url(<?php echo $this->getSkinUrl('images/text_sunday.png'); ?>);
-
-        }
-    </style>
 </div>
-<a href="#christmas-promotion-popup" id="click-christmas-popup" style="display: none">click</a>
+<a href="#countdown-promotion-popup" id="click-countdown-popup" style="display: none">click</a>
 <?php } ?> <!--end check from date and to date -->
