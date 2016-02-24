@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <ml_homepage translate="title" module="ml_homepage">
+                                        <title>Homepage</title>
+                                    </ml_homepage>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <cms>
+                        <children>
+                            <ml_homepage translate="title" module="ml_homepage">
+                                <title>Homepage Manager</title>
+                                <children>
+                                    <homepage translate="title" module="ml_homepage">
+                                        <title>Home Page</title>
+                                        <sort_order>0</sort_order>
+                                    </homepage>
+                                </children>
+                            </ml_homepage>
+                        </children>
+                    </cms>
+
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <cms>
+            <children>
+                <ml_homepage translate="title" module="ml_homepage">
+                    <title>Homepage Manager</title>
+                    <sort_order>17</sort_order>
+                    <children>
+                        <homepage translate="title" module="ml_homepage">
+                            <title>Manage Home Templates</title>
+                            <action>adminhtml/homepage_homepage</action>
+                            <sort_order>0</sort_order>
+                        </homepage>
+                    </children>
+                </ml_homepage>
+            </children>
+        </cms>
+
+    </menu>
+</config>

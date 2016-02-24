@@ -1,0 +1,63 @@
+<?php
+    $_items = $this->getItems();
+    $_imageHelper = Mage::helper('ml_flipbookcarousel/flipbookcarousel_image');
+?>
+<ul class="flipbook">
+    <?php foreach($_items as $key => $_item): ?>
+    <li class="flipbook-page">
+        <?php if($_item['image']): ?>
+            <img src="<?php echo $_imageHelper->init($_item,'image')
+                ->constrainOnly(false)
+                ->keepAspectRatio(true)
+                ->keepFrame(true)
+                ->keepTransparency(false)
+                ->backgroundColor(array(255,255,255))
+                ->resize(816,1007); ?>" alt=""/>
+        <?php endif; ?>
+
+        <?php if($_item['text']): ?>
+            <div class="flipbook-text">
+                <?php echo $_item['text'] ?>
+            </div>
+        <?php endif; ?>
+        <?php if($_item['video']): ?>
+            <?php $videoUrl = Mage::helper('ml_flipbookcarousel/flipbookcarousel')->getFileBaseUrl() . $_item['video'] ?>
+
+            <video width="816" controls >
+                <source src="<?php echo $videoUrl ?>" type="video/mp4">
+            </video>
+
+        <?php endif; ?>
+    </li>
+    <?php endforeach; ?>
+</ul>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+
+        var width = jQuery(".flipbook-2-images").width();
+        var margin = 20;
+        var flipbook = jQuery('.flipbook').bxSlider({
+            minSlides: 2,
+            maxSlides: 2,
+            slideWidth: Math.ceil( (width-margin) / 2),
+            slideMargin: 20,
+            speed: 750,
+            easing: 'linear',
+            infiniteLoop: true
+        });
+
+        jQuery(window).resize(function(){
+            width = jQuery(".flipbook-2-images").width();
+            flipbook.reloadSlider({
+                minSlides: 2,
+                maxSlides: 2,
+                slideWidth: Math.ceil( (width-margin) / 2),
+                slideMargin: 20,
+                speed: 750,
+                easing: 'linear',
+                infiniteLoop: true
+            });
+        });
+    });
+</script>

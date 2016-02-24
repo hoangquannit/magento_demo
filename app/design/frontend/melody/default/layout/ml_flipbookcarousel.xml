@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<layout>
+    <cms_index_index>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>ml_flipbookcarousel/js/turn.min.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>ml_flipbookcarousel/js/scissor.min.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>ml_flipbookcarousel/css/basic.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>ml_flipbookcarousel/js/jquery.jplayer.min.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>ml_flipbookcarousel/css/jplayer.blue.monday.css</name>
+            </action>
+        </reference>
+    </cms_index_index>
+</layout>
