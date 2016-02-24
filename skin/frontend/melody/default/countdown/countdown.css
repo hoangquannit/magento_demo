@@ -35,7 +35,7 @@
     margin:20px 0px 20px;
 }
 .countdown-product-list-ago, .countdown-product-list-feature, .countdown-product-list-feature {
-    max-width:530px;
+    max-width:533px;
     clear:both;
     margin:auto;
     display:block;
@@ -77,6 +77,12 @@
     transform:translate(-50%,-50%);
     /* margin-left:-9px; */
 }
+
+.count-down-countdown-promo .aldigridproductouterbox .date-countdown a{
+    border: none;
+    text-decoration:none;
+}
+
 .countdown-product-list-ago .image-box-countdown {
     background:url(../images/image-box-countdown.png) no-repeat center center;
 }
@@ -153,6 +159,7 @@
     font-size:25px;
     float:left;
     line-height:91px;
+    position: absolute;
 }
 .countdown-product-current .aldigridproductouterbox .date-countdown {
     left: 50%;
@@ -165,11 +172,10 @@
     color:#bb8f23;
 }
 .countdown-buynow {
-    background: rgba(0, 0, 0, 0) url("../images/bg_button_chrismas.png") no-repeat scroll center top !important;
     display: block;
     height: 57px;
     line-height: 45px;
-    margin: -10px auto 0;
+    margin: 10px auto 0;
     position: relative;
     text-align: center;
     width: 255px;
@@ -179,6 +185,7 @@
     font-size:18px;
     font-weight:bold;
     color:#fff;
+    text-decoration: none;
 }
 .countdown-detail-product {
     text-align:center;
