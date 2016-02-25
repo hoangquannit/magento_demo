@@ -23,6 +23,11 @@ class ml_FlipbookCarousel_Model_Flipbookcarousel
         parent::_construct();
         $this->_init('ml_flipbookcarousel/flipbookcarousel');
     }
+    /**
+     * before save flipbook carousel
+     * @access protected
+     * @return ML_FlipbookCarousel_Model_Flipbookcarousel
+     */
 
     protected function _beforeSave(){
         parent::_beforeSave();
