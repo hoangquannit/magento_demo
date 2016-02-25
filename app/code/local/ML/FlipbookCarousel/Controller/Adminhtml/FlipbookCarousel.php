@@ -2,7 +2,14 @@
 
 class ML_FlipbookCarousel_Controller_Adminhtml_FlipbookCarousel
     extends Mage_Adminhtml_Controller_Action {
-
+    /**
+     * upload file and get the uploaded name
+     * @access public
+     * @param string $input
+     * @param string $destinationFolder
+     * @param array $data
+     * @return string
+     */
     protected function _uploadAndGetName($input, $destinationFolder, $data) {
         try{
             if (isset($data[$input]['delete'])){

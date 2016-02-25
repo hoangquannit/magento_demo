@@ -25,9 +25,9 @@
                                         <sort_order>0</sort_order>
                                     </flipbookcarousel>
                                 </children>
-                            </ml_homepage>                        </children>
+                            </ml_homepage>
+                        </children>
                     </cms>
-
                 </children>
             </admin>
         </resources>
@@ -46,6 +46,5 @@
                 </ml_homepage>
             </children>
         </cms>
-
     </menu>
 </config>
