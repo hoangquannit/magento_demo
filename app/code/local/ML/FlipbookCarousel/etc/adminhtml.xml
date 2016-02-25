@@ -35,16 +35,16 @@
     <menu>
         <cms>
             <children>
-                <ml_homepage>
-                    <children>
+                <!--<ml_homepage>-->
+                    <!--<children>-->
                         <flipbookcarousel translate="title" module="ml_flipbookcarousel">
                             <title>Flipbook Carousel Items</title>
                             <action>adminhtml/flipbookcarousel_flipbookcarousel</action>
                             <sort_order>0</sort_order>
                         </flipbookcarousel>
                     </children>
-                </ml_homepage>
-            </children>
+                <!--</ml_homepage>-->
+            <!--</children>-->
         </cms>
     </menu>
 </config>

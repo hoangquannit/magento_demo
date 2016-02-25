@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+ 
+<layout>
+    <adminhtml_flipbookcarousel_flipbookcarousel_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>cms/ml_flipbookcarousel/flipbookcarousel</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="ml_flipbookcarousel/adminhtml_flipbookcarousel" name="flipbookcarousel" />
+        </reference>
+    </adminhtml_flipbookcarousel_flipbookcarousel_index>
+    <adminhtml_flipbookcarousel_flipbookcarousel_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="ml_flipbookcarousel/adminhtml_flipbookcarousel_grid" name="flipbookcarousel_grid"/>
+        </block>
+    </adminhtml_flipbookcarousel_flipbookcarousel_grid>
+    <!-- Flipbookcarousel add/edit action -->
+    <adminhtml_flipbookcarousel_flipbookcarousel_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>cms/ml_flipbookcarousel/flipbookcarousel</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="ml_flipbookcarousel/adminhtml_flipbookcarousel_edit" name="flipbookcarousel_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="ml_flipbookcarousel/adminhtml_flipbookcarousel_edit_tabs" name="flipbookcarousel_tabs"></block>
+        </reference>
+    </adminhtml_flipbookcarousel_flipbookcarousel_edit>
+
+</layout>

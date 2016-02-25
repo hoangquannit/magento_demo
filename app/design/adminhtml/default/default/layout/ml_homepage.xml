@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+ 
+<layout>
+    <adminhtml_homepage_homepage_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>cms/sm_homepage/homepage</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="sm_homepage/adminhtml_homepage" name="homepage" />
+
+        </reference>
+    </adminhtml_homepage_homepage_index>
+    <adminhtml_homepage_homepage_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="sm_homepage/adminhtml_homepage_grid" name="homepage_grid"/>
+        </block>
+    </adminhtml_homepage_homepage_grid>
+    <!-- Homepage add/edit action -->
+    <adminhtml_homepage_homepage_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>cms/sm_homepage/homepage</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="sm_homepage/adminhtml_homepage_edit" name="homepage_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="sm_homepage/adminhtml_homepage_edit_tabs" name="homepage_tabs"></block>
+        </reference>
+    </adminhtml_homepage_homepage_edit>
+
+</layout>
