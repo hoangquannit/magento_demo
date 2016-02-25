@@ -4,23 +4,11 @@
         <reference name="head">
             <action method="addItem">
                 <type>skin_js</type>
-                <name>ml_flipbookcarousel/js/turn.min.js</name>
-            </action>
-            <action method="addItem">
-                <type>skin_js</type>
-                <name>ml_flipbookcarousel/js/scissor.min.js</name>
+                <name>ml_flipbook/js/bxslider/bxslider.js</name>
             </action>
             <action method="addItem">
                 <type>skin_css</type>
-                <name>ml_flipbookcarousel/css/basic.css</name>
-            </action>
-            <action method="addItem">
-                <type>skin_js</type>
-                <name>ml_flipbookcarousel/js/jquery.jplayer.min.js</name>
-            </action>
-            <action method="addItem">
-                <type>skin_css</type>
-                <name>ml_flipbookcarousel/css/jplayer.blue.monday.css</name>
+                <name>ml_flipbook/js/bxslider/jquery.bxslider.css</name>
             </action>
         </reference>
     </cms_index_index>

@@ -51,41 +51,12 @@
                 </ml_flipbookcarousel>
             </updates>
         </layout>
-        <translate>
-            <modules>
-                <ml_FlipbookCarousel>
-                    <files>
-                        <default>ML_FlipbookCarousel.csv</default>
-                    </files>
-                </ml_FlipbookCarousel>
-            </modules>
-        </translate>
         <global_search>
             <flipbookcarousel>
                 <class>ml_flipbookcarousel/adminhtml_search_flipbookcarousel</class>
                 <acl>ml_flipbookcarousel</acl>
             </flipbookcarousel>
         </global_search>
-        <acl>
-            <resources>
-                <admin>
-                    <children>
-                        <system>
-                            <children>
-                                <config>
-                                    <children>
-                                        <flipbookcarousel_setting translate="title">
-                                            <title>Carousel </title>
-                                            <sort_order>65</sort_order>
-                                        </flipbookcarousel_setting>
-                                    </children>
-                                </config>
-                            </children>
-                        </system>
-                    </children>
-                </admin>
-            </resources>
-        </acl>
     </adminhtml>
     <admin>
         <routers>
