@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <layout>
-    <cms_index_index>
+    <default>
         <reference name="head">
             <action method="addItem">
                 <type>skin_js</type>
@@ -11,5 +11,5 @@
                 <name>ml_flipbook/js/bxslider/jquery.bxslider.css</name>
             </action>
         </reference>
-    </cms_index_index>
+    </default>
 </layout>

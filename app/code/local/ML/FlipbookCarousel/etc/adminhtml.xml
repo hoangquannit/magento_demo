@@ -10,7 +10,7 @@
                             <config>
                                 <children>
                                     <ml_flipbookcarousel translate="title" module="ml_flipbookcarousel">
-                                        <title>FlipbookCarousel</title>
+                                        <title>Flipbook Manage</title>
                                     </ml_flipbookcarousel>
                                 </children>
                             </config>
@@ -18,14 +18,14 @@
                     </system>
                     <cms>
                         <children>
-                            <ml_homepage>
+                            <ml_flipbookcarousel>
                                 <children>
                                     <flipbookcarousel translate="title" module="ml_flipbookcarousel">
                                         <title>Flipbook Carousel Items</title>
                                         <sort_order>0</sort_order>
                                     </flipbookcarousel>
                                 </children>
-                            </ml_homepage>
+                            </ml_flipbookcarousel>
                         </children>
                     </cms>
                 </children>
@@ -35,16 +35,18 @@
     <menu>
         <cms>
             <children>
-                <!--<ml_homepage>-->
-                    <!--<children>-->
-                        <flipbookcarousel translate="title" module="ml_flipbookcarousel">
-                            <title>Flipbook Carousel Items</title>
-                            <action>adminhtml/flipbookcarousel_flipbookcarousel</action>
-                            <sort_order>0</sort_order>
-                        </flipbookcarousel>
-                    </children>
-                <!--</ml_homepage>-->
-            <!--</children>-->
+                <ml_flipbookcarousel translate="title" module="ml_flipbookcarousel">
+                <title>Flipbook Manage</title>
+                <sort_order>17</sort_order>
+                <children>
+                    <flipbookcarousel translate="title" module="ml_flipbookcarousel">
+                        <title>Flipbook Carousel Items</title>
+                        <action>adminhtml/flipbookcarousel_flipbookcarousel</action>
+                        <sort_order>0</sort_order>
+                    </flipbookcarousel>
+                </children>
+                </ml_flipbookcarousel>
+            </children>
         </cms>
     </menu>
 </config>

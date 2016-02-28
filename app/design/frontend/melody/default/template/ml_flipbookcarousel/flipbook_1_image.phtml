@@ -1,6 +1,11 @@
 <?php
-$_items = $this->getItems();
+$_items = Mage::getModel('ml_flipbookcarousel/flipbookcarousel')
+    ->getCollection()
+    ->addFieldToFilter('template',1)
+    ->addFieldToFilter('status',1)
+    ->setOrder('item_order','asc');
 $_imageHelper = Mage::helper('ml_flipbookcarousel/flipbookcarousel_image');
+// var_dump(count($_items)); die('aaabbbb');
 ?>
 <ul class="flipbook">
     <?php foreach($_items as $key => $_item): ?>
