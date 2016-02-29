@@ -43,13 +43,6 @@ class ML_FlipbookCarousel_Block_Adminhtml_Flipbookcarousel_Grid
                 '0' => Mage::helper('ml_flipbookcarousel')->__('Disabled'),
             )
         ));
-        $this->addColumn('template', array(
-            'header'=> Mage::helper('ml_flipbookcarousel')->__('Template'),
-            'index' => 'template',
-            'type'  => 'options',
-            'options' => Mage::helper('ml_flipbookcarousel')->convertOptions(Mage::getModel('ml_flipbookcarousel/flipbookcarousel_attribute_source_template')->getAllOptions(false))
-
-        ));
         $this->addColumn('item_order', array(
             'header'=> Mage::helper('ml_flipbookcarousel')->__('Order'),
             'index' => 'item_order',

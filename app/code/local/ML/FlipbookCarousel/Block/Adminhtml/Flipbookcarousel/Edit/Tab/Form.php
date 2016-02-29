@@ -20,15 +20,6 @@ class ML_FlipbookCarousel_Block_Adminhtml_Flipbookcarousel_Edit_Tab_Form
 
         ));
 
-        $fieldset->addField('template', 'select', array(
-            'label' => Mage::helper('ml_flipbookcarousel')->__('Template'),
-            'name'  => 'template',
-            'required'  => true,
-            'class' => 'required-entry',
-
-            'values'=> Mage::getModel('ml_flipbookcarousel/flipbookcarousel_attribute_source_template')->getAllOptions(true),
-        ));
-
         $type = $fieldset->addField('type', 'select', array(
             'label' => Mage::helper('ml_flipbookcarousel')->__('Type'),
             'name'  => 'type',
