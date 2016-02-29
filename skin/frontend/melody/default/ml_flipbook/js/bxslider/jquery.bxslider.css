@@ -38,11 +38,6 @@
     right: 60px;
 }
 
-.flipbook-2-images{
-    position: relative;
-    overflow: hidden;
-}
-
 .flipbook-1-image{
     position: relative;
     max-height: 1007px;
@@ -75,3 +70,8 @@
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
 }
+.flipbook-images .flipbook li {
+    overflow: hidden;
+    height: auto;
+}
+

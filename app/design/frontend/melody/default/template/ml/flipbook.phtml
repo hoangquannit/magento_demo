@@ -7,36 +7,38 @@ $_items = Mage::getModel('ml_flipbookcarousel/flipbookcarousel')
 $_imageHelper = Mage::helper('ml_flipbookcarousel/flipbookcarousel_image');
 // var_dump(count($_items)); die('aaabbbb');
 ?>
-<ul class="flipbook">
-    <?php foreach($_items as $key => $_item): ?>
-        <li class="flipbook-page">
-            <?php if($_item['image']): ?>
-                <img src="<?php echo $_imageHelper->init($_item,'image')
-                    ->constrainOnly(false)
-                    ->keepAspectRatio(true)
-                    ->keepFrame(true)
-                    ->keepTransparency(false)
-                    ->backgroundColor(array(255,255,255))
-                    ->resize(400,200) ?>" alt=""/>
-            <?php endif; ?>
+<div class="flipbook-images">
+    <ul class="flipbook">
+        <?php foreach($_items as $key => $_item): ?>
+            <li class="flipbook-page">
+                <?php if($_item['image']): ?>
+                    <img src="<?php echo $_imageHelper->init($_item,'image')
+                        ->constrainOnly(false)
+                        ->keepAspectRatio(true)
+                        ->keepFrame(true)
+                        ->keepTransparency(false)
+                        ->backgroundColor(array(255,255,255))
+                        ->resize(600,300) ?>" alt=""/>
+                <?php endif; ?>
 
-            <?php if($_item['text']): ?>
-                <div class="flipbook-text">
-                    <?php echo $_item['text'] ?>
-                </div>
-            <?php endif; ?>
-            <?php if($_item['video']): ?>
+                <?php if($_item['text']): ?>
+                    <div class="flipbook-text">
+                        <?php echo $_item['text'] ?>
+                    </div>
+                <?php endif; ?>
+                <?php if($_item['video']): ?>
 
-                <?php $videoUrl = Mage::helper('ml_flipbookcarousel/flipbookcarousel')->getFileBaseUrl() . $_item['video'] ?>
+                    <?php $videoUrl = Mage::helper('ml_flipbookcarousel/flipbookcarousel')->getFileBaseUrl() . $_item['video'] ?>
 
-                <video width="800" controls >
-                    <source src="<?php echo $videoUrl ?>" type="video/mp4">
-                </video>
+                    <video width="600" controls >
+                        <source src="<?php echo $videoUrl ?>" type="video/mp4">
+                    </video>
 
-            <?php endif; ?>
-        </li>
-    <?php endforeach; ?>
-</ul>
+                <?php endif; ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
 
 <script type="text/javascript">
     jQuery(document).ready(function() {
