@@ -1,5 +1,5 @@
 .count-down-countdown-promo {
-    background-color: #1b092b;
+    background-color: #AA94BD;
     max-width:960px;
     margin:auto;
     padding:20px 30px 35px;
@@ -26,11 +26,7 @@
 .text-top-countdown h2, .text-top-countdown h3 {
     font-size:0px;
 }
-.text-above-countdown h4 {
-    background:url(../images/jill-christmate.png) no-repeat center top;
-    padding-top:36px;
-    font-size:0px;
-}
+
 .text-above-countdown {
     margin:20px 0px 20px;
 }
