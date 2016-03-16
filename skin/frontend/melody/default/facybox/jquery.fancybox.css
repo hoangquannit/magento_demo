@@ -175,7 +175,8 @@
 	overflow: hidden;
 	display: none;
 	z-index: 8010;
-	background: url('fancybox_overlay.png');
+	background: #242423;
+    opacity: 0.95;
 }
 
 .fancybox-overlay-fixed {

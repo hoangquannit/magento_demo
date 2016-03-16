@@ -14,8 +14,7 @@
         </reference>
 
         <reference name="footer">
-            <!--<block type="core/template" name="countdown_promo" template="ml/countdown.phtml"/>-->
-            <block type="core/template" name="ml_flipbook" template="ml/flipbook.phtml"/>
+            <block type="core/template" name="countdown_promo" template="ml/countdown.phtml"/>
         </reference>
     </default>
 
