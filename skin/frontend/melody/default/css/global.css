@@ -7031,7 +7031,7 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
   content: "\f18b";
 }
 
-#vel-megamenu {
+#nav {
   margin-bottom: 0;
   border: 0;
   position: static;
@@ -7282,7 +7282,7 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
     right: 0px;
   }
 
-  #vel-megamenu, .header-container {
+  #nav, .header-container {
     position: static !important;
   }
 
@@ -10928,20 +10928,23 @@ table.discount i.icon-remove {
 .header2 .megamenu-container .vel-megamenu {
   position: static;
 }
-.header2 #vel-megamenu {
+.header2 #nav {
   text-align: center;
   position: relative;
   min-height: 0px;
 }
-.header2 #vel-megamenu #megamenu {
+.header2 #nav #megamenu {
   display: inline-block;
 }
-.header2 #vel-megamenu #megamenu .menu > li > a {
+.header2 #nav #megamenu .menu > li > a {
   padding: 15px 15px 15px 15px;
   position: relative;
   top: 5px;
 }
-.header2 #vel-megamenu #megamenu .dropdown-menu {
+.nav-primary li.level0 > a{
+  text-transform: none!important;
+}
+.header2 #nav #megamenu .dropdown-menu {
   text-align: left;
 }
 .header2.header-fixed_active {
