@@ -35,14 +35,37 @@
 <!--        </div>-->
 <!--    </div>-->
 <!--</div>-->
-
-<header id="header" class="page-header header-container header2 clearfix">
-    <div class="page-header-container">
+<div class="header-container header2 clearfix">
+<header id="header">
+    <div class="topbar clearfix">
         <div class="container">
-            <a id="header_logo" class="logo" href="<?php echo $this->getUrl('') ?>">
-                <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
-                <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
-            </a>
+            <div class="vel-html hotline">
+<!--                will add to static block-->
+                <div class="block vel-wrap">
+                    <div class="block_content">
+                        <div class="cus-hotline btn-group"><em class="current icon icon-mobile-phone"></em>
+                            <div class="content-hotline toogle_content">Call Us +0 (123) 456 78 90</div>
+                        </div>
+                    </div>
+                </div>
+<!--                end will add static block -->
+            </div>
+            <div id="search_block_top" class="style1 btn-group">
+                <span class="current"><i class="icon icon-search"></i></span>
+<!--                <div id="header-search" class="skip-content">-->
+<!--                    --><?php //echo $this->getChildHtml('topSearch') ?>
+<!--                </div>-->
+            </div>
+        </div>
+    </div>
+    <div class="page-header-container">
+        <div class="header header-center clearfix">
+            <div class="container">
+                <a id="header_logo" class="logo" href="<?php echo $this->getUrl('') ?>">
+                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
+                    <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
+                </a>
+            </div>
         </div>
 
         <?php // In order for the language switcher to display next to logo on smaller viewports, it will be moved here.
@@ -86,9 +109,7 @@
 
         <!-- Search -->
 
-        <div id="header-search" class="skip-content">
-            <?php echo $this->getChildHtml('topSearch') ?>
-        </div>
+
 
         <!-- Account -->
 
@@ -97,6 +118,6 @@
         </div>
     </div>
 </header>
-
+</div>
 
 <?php echo $this->getChildHtml('topContainer'); ?>

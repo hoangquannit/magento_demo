@@ -8,9 +8,12 @@
              <reference name="head">
                  <action method="addItem"><type>skin_js</type><name>countdown/countdown.js</name></action>
                  <action method="addItem"><type>skin_css</type><name>countdown/countdown.css</name></action>
-                 <action method="addJs"><script>fancybox/jquery.fancybox.pack.js</script></action>
+                 <action method="addJs"><script>fancybox/jquery.fancybox.js</script></action>
+                 <action method="addItem"><type>skin_js</type><name>js/owl.carousel.js</name></action>
+                 <!--<action method="addItem"><type>skin_js</type><name>js/global.js</name></action>-->
                  <action method="addCss"><stylesheet>facybox/jquery.fancybox.css</stylesheet></action>
                  <action method="addCss"><stylesheet>css/global.css</stylesheet></action>
+                 <action method="addCss"><stylesheet>css/product_list.css</stylesheet></action>
              </reference>
         </reference>
 

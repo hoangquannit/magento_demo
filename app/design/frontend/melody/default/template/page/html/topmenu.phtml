@@ -34,6 +34,8 @@
 <?php $_menu = $this->getHtml('level-top') ?>
 
 <?php if($_menu): ?>
+ <div class="megamenu-container clearfix">
+    <div class="container">
     <nav id="nav" class="navbar navbar-default">
         <ol class="nav-primary">
             <li class="level0 nav-1 home">
@@ -43,4 +45,6 @@
             <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('navigation_link_cms')->toHtml() ?>
         </ol>
     </nav>
+    </div>
+ </div>
 <?php endif ?>
