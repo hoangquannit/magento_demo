@@ -132,7 +132,7 @@ Product list Styles
 }
 .product-container .product-image-container img {
   margin: 0 auto;
-  /*width: 100%;*/
+  width: 100%;
 }
 .product-container .comments_note {
   text-align: left;
