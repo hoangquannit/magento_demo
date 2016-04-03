@@ -10,12 +10,15 @@ $_helper = $this->helper('catalog/output');
                 <span><?php echo $this->__('Women fashion');?></span>
             </h4>
             <?php $_iterator = 0; ?>
-            <div class="block_content">
+            <div class="block_content" id="producttab_categories_sale">
                 <ul class="list-inline text-center vel-tab">
-                    <li class="active"><a href="#producttab182738439category4" data-toggle="tab"><span></span>Tops</a></li>
-                    <li><a href="#producttab182738439category8" data-toggle="tab"><span></span>Dresses</a></li>
-                    <li><a href="#producttab182738439category20" data-toggle="tab"><span></span>Beachwear</a></li>
-                    <li><a href="#producttab182738439category21" data-toggle="tab"><span></span>Accessories</a></li>
+                    <?php foreach($category_id_array as $category_id):?>
+                        <?php
+                            $_category = Mage::getModel('catalog/category')->load($category_id);
+                            $categoryName = $_category->getName();
+                        ?>
+                        <li class="producttab_categories_<?php echo $category_id?>"><a href="#" data-toggle="tab"><span></span><?php echo $categoryName ?></a></li>
+                    <?php endforeach;?>
                 </ul>
                 <div id="product_tab_content">
                     <div class="product_tab_content tab-content">
@@ -29,7 +32,7 @@ $_helper = $this->helper('catalog/output');
                         $_productCollection->getSelect()->limit(5);
                         Mage::getModel('review/review')->appendSummary($_productCollection);
                         ?>
-                        <div class="tab-pane active">
+                        <div class="tab-pane" id="producttab_categories_<?php echo $category_id; ?>">
                             <div class="row">
                                 <div id="<?php echo 'producttab_'.$category_id;?>" class="product_list grid ">
                     <?php foreach ($_productCollection as $_product): ?>
@@ -126,6 +129,17 @@ $_helper = $this->helper('catalog/output');
                 'type':     'iframe',
                 'href':     url + 'content_only=1'
             });
+        });
+
+        jQuery("#producttab_categories_sale ul.vel-tab li", this).first().addClass("active");
+        jQuery("#producttab_categories_sale .tab-content .tab-pane", this).first().addClass("active");
+        jQuery("#producttab_categories_sale ul.vel-tab li").click(function(event){
+            event.preventDefault();
+            jQuery('#producttab_categories_sale ul.vel-tab li').removeClass('active');
+            jQuery('#producttab_categories_sale .tab-content .tab-pane').removeClass('active');
+            var cl = jQuery(this).attr('class');
+            jQuery("#"+cl).addClass('active');
+            jQuery(this).addClass('active');
         });
 
     });
