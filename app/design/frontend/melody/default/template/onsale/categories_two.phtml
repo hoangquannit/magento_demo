@@ -1,0 +1,148 @@
+<?php
+$category_id_array = array(14,15,16,17);
+//$category_id = 11;
+
+$_helper = $this->helper('catalog/output');
+?>
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('homepage_categories_sale_two')->toHtml() ?>
+<div class="col-md-12 col-sm-12 col-xs-12 ">
+    <div class="block">
+        <h4 class="title_block">
+            <span><?php echo $this->__('Men fashion');?></span>
+        </h4>
+        <?php $_iterator = 0; ?>
+        <div class="block_content" id="producttab_categories_two_sale">
+            <ul class="list-inline text-center vel-tab">
+                <?php foreach($category_id_array as $category_id):?>
+                    <?php
+                    $_category = Mage::getModel('catalog/category')->load($category_id);
+                    $categoryName = $_category->getName();
+                    ?>
+                    <li class="producttab_categories_<?php echo $category_id?>"><a href="#" data-toggle="tab"><span></span><?php echo $categoryName ?></a></li>
+                <?php endforeach;?>
+            </ul>
+            <div id="product_tab_content">
+                <div class="product_tab_content tab-content">
+                    <?php foreach ($category_id_array as $category_id):?>
+                        <?php
+                        $_productCollection = Mage::getModel('catalog/category')->load($category_id)
+                            ->getProductCollection()
+                            ->addAttributeToSelect('*') // add all attributes - optional
+                            ->addAttributeToFilter('status', 1) // enabled
+                            ->addAttributeToFilter('visibility', 4); //visibility in catalog,search
+                        $_productCollection->getSelect()->limit(5);
+                        Mage::getModel('review/review')->appendSummary($_productCollection);
+                        ?>
+                        <div class="tab-pane" id="producttab_categories_<?php echo $category_id; ?>">
+                            <div class="row">
+                                <div id="<?php echo 'producttab_'.$category_id;?>" class="product_list grid ">
+                                    <?php foreach ($_productCollection as $_product): ?>
+                                        <div class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
+                                            <div class="ajax_block_product product_block">
+                                                <div class="product-container default clearfix">
+                                                    <?php // Product Image ?>
+                                                    <div class="left-block">
+                                                        <div class="product-image-container">
+                                                            <div class="vel-image-more" data-idproduct="25">
+                                                                <a href="<?php echo $_product->getProductUrl() ?>" data-fancybox-group="other-views" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>">
+                                                                    <img class="img-responsive" src="<?php echo $_product->getImageUrl(); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" itemprop="image" >
+                                                                </a>
+                                                            </div>
+                                                            <a class="product_img_link" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" itemprop="url">
+                                                                <img class="img-responsive" src="<?php echo  $_product->getImageUrl()?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" itemprop="image">
+                                                            </a>
+                                                        </div>
+                                                        <a class="quick-view" href="<?php echo $_product->getProductUrl() ?>" title="Quick view">
+                                                            <i class="icon icon-eye-open"></i>
+                                                            <span>Quick view</span>
+                                                        </a>
+                                                    </div>
+                                                    <?php // Product description ?>
+                                                    <div class="right-block">
+                                                        <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+                                                        <h5><a class="product-name" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a></h5>
+                                                        <?php if($_product->getRatingSummary()): ?>
+                                                            <?php echo $this->getReviewsSummaryHtml($_product) ?>
+                                                        <?php endif; ?>
+                                                        <div class="content_price"> <?php echo $this->getPriceHtml($_product, true) ?></div>
+                                                        <p class="product-desc">
+                                                            <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                                                        </p>
+                                                        <div class="functional-buttons clearfix">
+                                                            <?php if($_product->isSaleable()): ?>
+                                                                <div class="addtocart">
+                                                                    <a class="button ajax_add_to_cart_button" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')" title="<?php echo $this->__('Add to Cart') ?>" data-id-product="25">
+                                                                        <i class="icon icon-shopping-cart"></i><span><?php echo $this->__('Add to Cart') ?></span>
+                                                                    </a>
+                                                                </div>
+                                                            <?php else: ?>
+                                                                <div class="addtocart"> <span><?php echo $this->__('Out of stock') ?></span></div>
+                                                            <?php endif; ?>
+                                                            <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+                                                                <a class="add_to_compare" title="<?php echo $this->__('Add to Compare');?>" href="<?php echo $_compareUrl ?>" data-id-product="25"><i class="icon icon-copy"></i><span><?php echo $this->__('Compare');?></span></a>
+                                                            <?php endif; ?>
+                                                            <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                                                <a class="addToWishlist wishlistProd_25" href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" title="<?php echo $this->__('Add to Wishlist');?>"><i class="icon icon-heart-empty"></i>
+                                                                    <span><?php echo $this->__('Wishlist') ?></span>
+                                                                </a>
+                                                            <?php endif; ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function(){
+                                jQuery('#producttab_<?php echo $category_id?>').owlCarousel({
+                                    items:4,
+                                    loop:true,
+                                    autoWidth:true,
+                                    stagePadding: 100,
+                                    navigation:true
+                                });
+                            });
+                        </script>
+                    <?php endforeach;?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
+</div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery('.quick-view').click(function(e){
+            e.preventDefault();
+            var url = jQuery(this).attr('href');
+            if (url.indexOf('?') != -1)
+                url += '&';
+            else
+                url += '?';
+            jQuery.fancybox({
+                'padding':  0,
+                'width':    1087,
+                'height':   610,
+                'type':     'iframe',
+                'href':     url + 'content_only=1'
+            });
+        });
+
+        jQuery("#producttab_categories_two_sale ul.vel-tab li", this).first().addClass("active");
+        jQuery("#producttab_categories_two_sale .tab-content .tab-pane", this).first().addClass("active");
+        jQuery("#producttab_categories_two_sale ul.vel-tab li").click(function(event){
+            event.preventDefault();
+            jQuery('#producttab_categories_two_sale ul.vel-tab li').removeClass('active');
+            jQuery('#producttab_categories_two_sale .tab-content .tab-pane').removeClass('active');
+            var cl = jQuery(this).attr('class');
+            jQuery("#"+cl).addClass('active');
+            jQuery(this).addClass('active');
+        });
+
+    });
+</script>
+
