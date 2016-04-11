@@ -16,12 +16,14 @@
                  <action method="addCss"><stylesheet>css/global.css</stylesheet></action>
                  <action method="addCss"><stylesheet>css/velnivoslider.css</stylesheet></action>
                  <action method="addCss"><stylesheet>css/product_list.css</stylesheet></action>
+                 <action method="addCss"><stylesheet>css/blocknewsletter.css</stylesheet></action>
              </reference>
         </reference>
 
         <reference name="footer">
             <block type="core/template" name="countdown_promo" template="ml/countdown.phtml"/>
         </reference>
+        <remove name="footer.newsletter" />
     </default>
 
 </layout>
