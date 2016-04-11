@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <SM_Blog>
+            <version>0.1.1</version>
+        </SM_Blog>
+    </modules>
+	
+	<frontend>
+        <routers>
+            <blog>
+                <use>standard</use>
+                <args>
+                    <module>SM_Blog</module>
+                    <frontName>blog</frontName>
+                </args>
+            </blog>
+        </routers>
+        <layout>
+            <updates>
+                <sm_blog>
+                    <file>blog.xml</file>
+                </sm_blog>
+            </updates>
+        </layout>
+    </frontend>
+	
+    <admin>
+        <routers>
+			<blog>
+				<use>admin</use>
+				<args>
+					<module>SM_Blog</module>
+					<frontName>post</frontName>
+				</args>
+			</blog>
+        </routers>
+    </admin>
+
+	<adminhtml>
+		<menu>
+			<blog module="blog">
+				<title>Blog</title>
+				<sort_order>71</sort_order>               
+				<children>
+					<items module="blog">
+						<title>Manage Items</title>
+						<sort_order>0</sort_order>
+						<action>blog/adminhtml_post</action>
+					</items>
+				</children>
+			</blog>
+		</menu>
+		
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <SM_Blog>
+                            <title>Blog Module</title>
+                            <sort_order>10</sort_order>
+                        </SM_Blog>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <blog>
+                    <file>blog.xml</file>
+                </blog>
+            </updates>
+        </layout>
+
+    </adminhtml> 
+
+    <global>
+        <models>
+            <sm_blog>
+                <class>SM_Blog_Model</class>
+                <resourceModel>sm_blog_resource</resourceModel>
+            </sm_blog> 
+            <sm_blog_resource>
+                <class>SM_Blog_Model_Resource</class>    
+                <entities>
+                    <post>
+                        <table>sm_blog_post_entity</table>
+                    </post>
+                    <post_entity_varchar>
+                        <table>sm_blog_post_entity_varchar</table>
+                    </post_entity_varchar>     
+                    <post_entity_text>
+                        <table>sm_blog_post_entity_text</table>
+                    </post_entity_text>                    
+                    <post_entity_int>
+                        <table>sm_blog_post_entity_int</table>
+                    </post_entity_int>                     
+                </entities>
+            </sm_blog_resource>
+        </models>
+        <resources>
+            <sm_blog_setup>
+                <setup>
+                    <module>SM_Blog</module>
+                    <class>SM_Blog_Model_Resource_Setup</class>
+                </setup>
+            </sm_blog_setup>
+            <sm_blog_write>
+                <connection>
+                    <use>default_write</use>
+                </connection>
+            </sm_blog_write>
+            <sm_blog_read>
+                <connection>
+                    <use>default_read</use>
+                </connection>
+            </sm_blog_read>            
+        </resources>
+	     <helpers>
+            <blog>
+                <class>SM_Blog_Helper</class>
+            </blog>
+        </helpers>
+        <blocks>
+            <blog>
+                <class>SM_Blog_Block</class>
+            </blog>
+        </blocks>
+
+        <rewrite>
+            <sm_blog>
+                <from><![CDATA[#^/blogs/#]]></from>
+                <to><![CDATA[/blog/index/view/url/$1]]></to>
+                <complete>1</complete>
+            </sm_blog>
+        </rewrite>
+
+    </global>
+</config>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

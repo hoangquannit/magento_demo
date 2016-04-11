@@ -1,0 +1,7 @@
+<?php $data = $this->getAllPost(); ?>
+    <ul>
+        <?php foreach ($data as $item) { ?>
+            <?php if($item->getIs_active()) { ?>
+            <li><a href="<?php echo 'blogs/'.$item->getUrl(); ?>"><?php echo $item->getTitle(); ?></a></li>
+        <?php } } ?>
+    </ul>

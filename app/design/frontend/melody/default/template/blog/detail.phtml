@@ -1,0 +1,50 @@
+<?php
+$url  = Mage::helper('blog')->getUrl();
+$data = $this->getDataBlog($url);
+
+if(count($data->getData()) > 0 && $data->getIsActive() == 1) {
+?>
+<?php if($data->getImage() != null) { ?>
+    <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'blogs/'.$data->getImage(); ?>" style="height: 300px;width: 300px; float: left"/>
+<?php } ?>
+    <h2 style="float: left"><?php echo $data->getTitle(); ?></h2>
+    <p style="float: left"><?php echo $data->getContent(); ?></p>
+<?php
+$id = $data->getId();
+$idProduct = array();
+if($id != null) {
+    $model = Mage::getModel('sm_blog/post')->load($id);
+    $idProduct = explode(',',$model->getRelated_product());
+    $count = 1;
+    $codeCurrency = Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol();
+    //get product
+    echo '<h3 style="float: left; clear: left; margin-top: 30px">Related Product</h3>';
+    echo '<table style="width: 100%" border="1px">';
+    echo '<tr>
+    <td> </td>
+    <td>Name</td>
+    <td>Price</td>
+    </tr>';
+    foreach($idProduct as $idProduct) {
+        $_product = Mage::getModel('catalog/product')->load($idProduct);
+        ?>
+        <tr>
+            <td><?php echo $count; ?></td>
+            <td><a href="<?php echo $_product->getProductUrl(); ?>"><?php echo $_product->getName(); ?></a></td>
+            <td><?php echo $codeCurrency.$_product->getPrice(); ?></td>
+        </tr>
+        <?php
+       // echo '<pre>';
+        //print_r($_product);
+        //break;
+        $count++;
+    }
+    echo '</table>';
+}
+
+?>
+
+
+<?php } else {?>
+    <h2><?php echo 'Blog not exist!'; ?></h2>
+<?php } ?>
