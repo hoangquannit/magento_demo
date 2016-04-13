@@ -17,6 +17,7 @@
                  <action method="addCss"><stylesheet>css/velnivoslider.css</stylesheet></action>
                  <action method="addCss"><stylesheet>css/product_list.css</stylesheet></action>
                  <action method="addCss"><stylesheet>css/blocknewsletter.css</stylesheet></action>
+                 <action method="addCss"><stylesheet>css/smartblogstyle.css</stylesheet></action>
              </reference>
         </reference>
 

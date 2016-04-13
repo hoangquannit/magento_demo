@@ -1,7 +1,41 @@
 <?php $data = $this->getAllPost(); ?>
-    <ul>
-        <?php foreach ($data as $item) { ?>
-            <?php if($item->getIs_active()) { ?>
-            <li><a href="<?php echo 'blogs/'.$item->getUrl(); ?>"><?php echo $item->getTitle(); ?></a></li>
-        <?php } } ?>
-    </ul>
+<div class="bottom-container clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="vel-modules col-sm-12  col-xs-12 col-md-6 col-xs-12">
+                <div class="block vel-wrap">
+                    <div class="block blog products-carousel">
+                        <h4 class="title_block"><?php echo $this->__('From blog');?></h4>
+                        <div class="sdsblog-box-content">
+                            <div id="sdsblog">
+                                <?php foreach ($data as $item) : ?>
+                                <?php if($item->getIs_active()):?>
+                                <div class="item">
+                                    <div class="sds_blog_post">
+                                        <div class="blog_post_ct clearfix">
+                                            <div class="news_module_image_holder">
+                                                <a href="<?php echo 'blogs/'.$item->getUrl();?>">
+                                                    <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'blogs/'.$item->getImage(); ?>"/>
+                                                </a>
+                                            </div>
+                                            <h4 class="sds_post_title"><a href="<?php echo 'blogs/'.$item->getUrl(); ?>"><?php echo $item->getTitle(); ?></a></h4>
+                                            <div class="sds_post-info">
+                                                <span class="sds_creat_date"><?php echo $this->__('Posted:').$item->getCreatedAt();?></span>
+                                            </div>
+                                            <div class="sds_desc">
+                                                <?php echo $item->getContent();?>
+                                            </div>
+                                            <a href="<?php echo 'blogs/'.$item->getUrl(); ?>" class="r_more btn btn-default"><span><?php echo $this->__('Read More')?></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php endif;?>
+                                <?php endforeach;?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
