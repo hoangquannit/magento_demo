@@ -8,9 +8,12 @@
                         <h4 class="title_block"><?php echo $this->__('From blog');?></h4>
                         <div class="sdsblog-box-content">
                             <div id="sdsblog">
+                                <?php $count =0; ?>
                                 <?php foreach ($data as $item) : ?>
-                                <?php if($item->getIs_active()):?>
-                                <div class="item">
+                                <?php if($item->getIs_active()): $count= $count+1;?>
+                                <?php if($count==1):?>
+                                    <div class="item">
+                                <?php endif;?>
                                     <div class="sds_blog_post">
                                         <div class="blog_post_ct clearfix">
                                             <div class="news_module_image_holder">
@@ -28,14 +31,53 @@
                                             <a href="<?php echo 'blogs/'.$item->getUrl(); ?>" class="r_more btn btn-default"><span><?php echo $this->__('Read More')?></span></a>
                                         </div>
                                     </div>
-                                </div>
+                                <?php if(intval($count)%2 == 0 && (intval($count) < count($data)) ):?>
+                                    </div><div class="item">
+                                <?php endif;?>
+
                                 <?php endif;?>
                                 <?php endforeach;?>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home_page_video')->toHtml(); ?>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        var owl = jQuery("#sdsblog"),
+            status = jQuery("#owlStatus");
+
+        if(jQuery('html').hasClass('rtl'))
+            rtl = 'rtl';
+        else
+            rtl = 'ltr';
+        owl.owlCarousel({
+            direction : rtl,
+            items : 1,
+            itemsDesktopSmall : [1024, 1],
+            itemsTablet : [768, 1],
+            navigation : true,
+            afterAction : afterAction
+        });
+
+        function updateResult(pos,value){
+            status.find(pos).find(".result").text(value);
+        }
+
+        function afterAction(){
+            updateResult(".owlItems", this.owl.owlItems.length);
+            updateResult(".currentItem", this.owl.currentItem);
+            updateResult(".prevItem", this.prevItem);
+            updateResult(".visibleItems", this.owl.visibleItems);
+            updateResult(".dragDirection", this.owl.dragDirection);
+        }
+    });
+
+</script>
+
+
