@@ -8332,10 +8332,12 @@ body.index #center_column .products-carousel .carousel-control.right {
 }
 #vel-copyright .container-inner p {
   margin: 0px;
+  float: left;
 }
 #vel-copyright a {
   color: #adadad;
   font-size: 14px;
+  float: left;
 }
 #vel-copyright a:hover {
   color: white;
