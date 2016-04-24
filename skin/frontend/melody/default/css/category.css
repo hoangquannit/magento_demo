@@ -1,0 +1,100 @@
+/* RIGHT TO LEFT */
+/*
+ * LAYOUTS VAIRABLES
+ */
+/* ************************************************************************************************
+								Categories Page Styles
+************************************************************************************************ */
+.category .heading-counter {
+  padding-top: 5px;
+  display: none;
+}
+
+.content_scene_cat {
+  line-height: 20px;
+  margin: 0 0 15px 0;
+  clear: both;
+  background-color: white;
+}
+.content_scene_cat .cat_desc {
+  margin-top: 10px;
+}
+.content_scene_cat span.category-name {
+  font: 700 42px/51px "Raleway", sans-serif;
+  color: white;
+  margin-bottom: 12px;
+  display: none;
+}
+@media (max-width: 1199px) {
+  .content_scene_cat span.category-name {
+    font-size: 25px;
+    line-height: 30px;
+  }
+}
+.content_scene_cat p {
+  margin-bottom: 0;
+}
+.content_scene_cat a {
+  color: white;
+}
+.content_scene_cat a:hover {
+  text-decoration: underline;
+}
+.content_scene_cat .content_scene {
+  color: #777777;
+}
+.content_scene_cat .content_scene .cat_desc {
+  padding-top: 20px;
+}
+.content_scene_cat .content_scene .cat_desc a {
+  color: #626262;
+}
+.content_scene_cat .content_scene .cat_desc a:hover {
+  color: #e91e63;
+}
+
+/* ************************************************************************************************
+									Sub Categories Styles
+************************************************************************************************ */
+#subcategories .subcategory-heading {
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 10px 0;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #000;
+}
+#subcategories ul {
+  margin-bottom: 30px;
+}
+#subcategories ul li {
+  margin-bottom: 20px;
+}
+#subcategories ul li .subcategory-image {
+  padding: 0 0 8px 0;
+  background-color: white;
+}
+#subcategories ul li .subcategory-image a {
+  display: block;
+  padding: 9px;
+  border: 1px solid #e2e2e2;
+  text-align: center;
+}
+#subcategories ul li .subcategory-image a img {
+  max-width: 100%;
+  vertical-align: top;
+}
+#subcategories ul li h5 {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+#subcategories ul li .cat_desc {
+  display: none;
+}
+#subcategories ul li:hover:before {
+  border-color: #e91e63;
+}
+#subcategories ul li:hover .subcategory-name {
+  color: #e91e63;
+}
