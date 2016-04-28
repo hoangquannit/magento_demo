@@ -90,13 +90,15 @@
 
             <div class="account-cart-wrapper">
                 <?php echo $this->getChildHtml('currency_switcher') ?>
-                <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
-                    <span class="icon"></span>
-                </a>
+                <div id="header_user" class="btn-group">
+                    <div class="current">
+                            <span class="icon icon-user"></span>
+                    </div>
+                </div>
 
                 <!-- Cart -->
 
-                <div class="header-minicart">
+                <div class="header-minicart vel-cart clearfix">
                     <?php echo $this->getChildHtml('minicart_head'); ?>
                 </div>
             </div>
