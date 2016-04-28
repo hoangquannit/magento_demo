@@ -61,10 +61,13 @@
     <div class="page-header-container">
         <div class="header header-center clearfix">
             <div class="container">
-                <a id="header_logo" class="logo" href="<?php echo $this->getUrl('') ?>">
-                    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
-                    <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
-                </a>
+                <div class="row">
+                    <div id="header_logo">
+                        <a href="<?php echo $this->getUrl('') ?>">
+                            <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
