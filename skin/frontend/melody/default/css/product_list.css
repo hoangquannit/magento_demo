@@ -864,3 +864,4 @@ Product list(Index page) Styles
   font-size: 10px !important;
   padding: 5px !important;
 }
+a:hover {text-decoration: none!important;}
