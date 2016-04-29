@@ -71,7 +71,7 @@ $_helper = $this->helper('catalog/output');
                                                         <div class="functional-buttons clearfix">
                                                             <?php if($_product->isSaleable()): ?>
                                                                 <div class="addtocart">
-                                                                    <a class="button ajax_add_to_cart_button" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')" title="<?php echo $this->__('Add to Cart') ?>" data-id-product="25">
+                                                                    <a class="ajax_add_to_cart_button" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')" title="<?php echo $this->__('Add to Cart') ?>" data-id-product="25">
                                                                         <i class="icon icon-shopping-cart"></i><span><?php echo $this->__('Add to Cart') ?></span>
                                                                     </a>
                                                                 </div>
