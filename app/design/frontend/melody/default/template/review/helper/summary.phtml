@@ -25,14 +25,28 @@
  */
 ?>
 <?php if ($this->getReviewsCount()): ?>
-    <div class="ratings comments_note clearfix">
-        <?php if ($this->getRatingSummary()):?>
-            <div class="rating-box">
-                <div class="star_content" style="width:<?php echo $this->getRatingSummary() ?>%"></div>
-            </div>
-        <?php endif;?>
-        <span class="nb-comments">
-            <span><?php echo $this->__('%d Review(s)', $this->getReviewsCount()) ?></span>
-        </span>
-    </div>
+    <?php if(Mage::registry('current_product')):?>
+        <div class="ratings comments_note clearfix">
+            <?php if ($this->getRatingSummary()):?>
+                <span><?php echo $this->__('Rating');?>&nbsp;</span>
+                <div class="rating-box star_content">
+                    <div style="width:<?php echo $this->getRatingSummary() ?>%"></div>
+                </div>
+            <?php endif;?>
+            <ul class="comments_advices">
+                <li><a href="#" class="reviews selected"><?php echo $this->__('Read reviews(%d)', $this->getReviewsCount()) ?></a></li>
+            </ul>
+        </div>
+    <?php else:?>
+        <div class="ratings comments_note clearfix">
+            <?php if ($this->getRatingSummary()):?>
+                <div class="rating-box">
+                    <div class="star_content" style="width:<?php echo $this->getRatingSummary() ?>%"></div>
+                </div>
+            <?php endif;?>
+            <span class="nb-comments">
+                <span><?php echo $this->__('%d Review(s)', $this->getReviewsCount()) ?></span>
+            </span>
+        </div>
+    <?php endif;?>
 <?php endif; ?>

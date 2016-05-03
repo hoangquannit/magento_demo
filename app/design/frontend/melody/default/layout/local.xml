@@ -20,6 +20,8 @@
                  <action method="addCss"><stylesheet>css/product_list.css</stylesheet></action>
                  <action method="addCss"><stylesheet>css/blocknewsletter.css</stylesheet></action>
                  <action method="addCss"><stylesheet>css/smartblogstyle.css</stylesheet></action>
+                 <action method="addCss"><stylesheet>css/product.css</stylesheet></action>
+                 <action method="addCss"><stylesheet>css/productcomments.css</stylesheet></action>
              </reference>
             <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
             <action method="setIsHandle"><applied>1</applied></action>
