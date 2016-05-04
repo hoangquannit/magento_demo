@@ -26,7 +26,14 @@
 ?>
 <div class="footer-container clearfix">
     <footer id="footer">
-        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home_page_footer_logo_slider')->toHtml(); ?>
+        <?php
+        // IF WE ARE ON HOMEPAGE
+        if(
+            Mage::getSingleton('cms/page')->getIdentifier() == 'home' &&
+            Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms'
+        ):?>
+            <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home_page_footer_logo_slider')->toHtml(); ?>
+        <?php endif;?>
         <div class="vel-footer-center clearfix">
             <div class="container">
                 <div class="row">
