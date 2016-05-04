@@ -78,10 +78,15 @@
                         </button>
                     </p>
 
-                    <div id="product_comments_block_extra" class="extra-info no-print">
-                        <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
-                        <?php echo $this->getChildHtml('product_type_availability'); ?>
-                    </div>
+                    <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
+
+                    <?php if ($_product->getShortDescription()):?>
+                        <div id="short_description_block">
+                            <div id="short_description_content" class="std rte align_justify"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
+                        </div>
+                    <?php endif;?>
+                    <?php echo $this->getChildHtml('product_type_availability'); ?>
+
 
                     <?php echo $this->getChildHtml('other');?>
 

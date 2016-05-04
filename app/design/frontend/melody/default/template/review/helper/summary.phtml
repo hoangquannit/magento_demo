@@ -26,6 +26,7 @@
 ?>
 <?php if ($this->getReviewsCount()): ?>
     <?php if(Mage::registry('current_product')):?>
+    <div id="product_comments_block_extra" class="no-print">
         <div class="ratings comments_note clearfix">
             <?php if ($this->getRatingSummary()):?>
                 <span><?php echo $this->__('Rating');?>&nbsp;</span>
@@ -37,6 +38,7 @@
                 <li><a href="#" class="reviews selected"><?php echo $this->__('Read reviews(%d)', $this->getReviewsCount()) ?></a></li>
             </ul>
         </div>
+    </div>
     <?php else:?>
         <div class="ratings comments_note clearfix">
             <?php if ($this->getRatingSummary()):?>
