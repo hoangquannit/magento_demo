@@ -37,4 +37,12 @@
         <remove name="footer.newsletter" />
     </default>
 
+    <PRODUCT_TYPE_configurable>
+        <reference name="product.info.options.wrapper.bottom">
+            <remove name="product.tierprices"/>
+            <remove name="product.clone_prices"/>
+            <action method="unsetChild"><name>product.info.sharing</name></action>
+            <action method="unsetChild"><name>product.info.addto</name></action>
+        </reference>
+    </PRODUCT_TYPE_configurable>
 </layout>

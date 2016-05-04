@@ -90,9 +90,14 @@
 
                     <?php echo $this->getChildHtml('other');?>
 
-                    <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-                        <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-                    <?php endif;?>
+                    <div class="box-info-product">
+                        <div class="product_attributes clearfix">
+                            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                                <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+                            <?php endif;?>
+
+                        </div>
+                    </div>
                 </div>
 
             </div>

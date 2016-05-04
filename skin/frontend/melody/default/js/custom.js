@@ -19,4 +19,14 @@ $j(window).load(function(){
             $j(".vel_preload").hide();
         } // Triggers when slider has loaded
     });
+
+    $j('.product_quantity_up').click(function (event) {
+        event.preventDefault();
+        $j('#qty').val(+$j('#qty').val() + 1);
+    });
+    $j('.product_quantity_down').click(function (event) {
+        event.preventDefault();
+        if ($j('#qty').val() > 0) $j('#qty').val(+$j('#qty').val() - 1);
+    });
 });
+
