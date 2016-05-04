@@ -97,7 +97,31 @@
                             <?php endif;?>
 
                         </div>
+                        <div class="clearfix product-actions">
+                            <ul id="usefull_link_block" class="list-inline no-print">
+                                <?php if ($this->canEmailToFriend()): ?>
+                                <li class="sendtofriend">
+                                    <a id="send_friend_button" href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>">
+                                        <?php echo $this->__('Send to a friend');?>
+                                    </a>
+                                </li>
+                                <?php endif; ?>
+                                <li class="print">
+                                    <a href="javascript:print();">
+                                        <?php echo $this->__('Print');?>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div id="product_payment_logos">
+                                <div class="box-security">
+                                    <h5 class="product-heading-h5"></h5>
+                                    <img src="http://velatheme.com/demo/elise_multi/vel_elise/modules/productpaymentlogos/img/payment-logo.png" alt="" class="img-responsive">
+                                </div>
+                            </div>
+                            <?php echo $this->getChildHtml('addto') ?>
+                        </div>
                     </div>
+
                 </div>
 
             </div>
@@ -125,8 +149,6 @@
                     </div>
                 <?php endif; ?>
             </div>
-
-            <?php echo $this->getChildHtml('related_products') ?>
 
             <div class="clearer"></div>
             <?php if ($_product->isSaleable() && $this->hasOptions()):?>
@@ -198,8 +220,9 @@
             </dl>
         <?php endif; ?>
     </div>
+    <?php echo $this->getChildHtml('related_products') ?>
 
-    <?php echo $this->getChildHtml('upsell_products') ?>
-    <?php echo $this->getChildHtml('product_additional_data') ?>
+<!--    --><?php //echo $this->getChildHtml('upsell_products') ?>
+<!--    --><?php //echo $this->getChildHtml('product_additional_data') ?>
 
 </div>
