@@ -1415,3 +1415,17 @@ p.submit .btn-default:hover {
     color: #777777;
     font-family: "Raleway", sans-serif;
 }
+#short_description_content{
+    font-size: 13px;
+    color: #777777;
+    font-family: "Raleway", sans-serif;
+}
+.box-info-product a{
+    font-size: 13px;
+    color: #777777;
+    font-family: "Raleway", sans-serif;
+}
+.footer-container{
+    max-width: 100%!important;
+    padding: 0!important;
+}
