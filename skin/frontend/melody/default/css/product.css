@@ -1386,3 +1386,20 @@ p.submit .btn-default:hover {
 .socialsharing_product button {
     margin-bottom: 3px;
 }
+/* RIGHT TO LEFT */
+/*
+ * LAYOUTS VAIRABLES
+ */
+.blockproductscategory {
+    margin-top: 60px;
+}
+
+#relateproduct .product-container.default {
+    padding-bottom: 20px;
+}
+#relateproduct .product-container.default .functional-buttons {
+    bottom: -50px;
+}
+#relateproduct .product-container.default:hover .functional-buttons {
+    bottom: -19px;
+}
