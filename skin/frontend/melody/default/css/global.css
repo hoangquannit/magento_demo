@@ -10734,6 +10734,7 @@ table.discount i.icon-remove {
   margin-bottom: 0!important;
   font-weight: 500!important;
   text-transform: uppercase!important ;
+  float: left;
 }
 
 .price {
