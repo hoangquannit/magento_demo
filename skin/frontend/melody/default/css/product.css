@@ -1403,3 +1403,15 @@ p.submit .btn-default:hover {
 #relateproduct .product-container.default:hover .functional-buttons {
     bottom: -19px;
 }
+.product-collateral .toggle-tabs{
+    border: none!important;
+    background: none!important;
+}
+.panel-inner h2{ display: none!important;}
+.product-collateral > dl > dd{border: none!important;}
+.panel-inner div{
+    padding: 15px;
+    font-size: 13px;
+    color: #777777;
+    font-family: "Raleway", sans-serif;
+}

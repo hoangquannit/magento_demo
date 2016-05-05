@@ -10665,17 +10665,17 @@ table.discount i.icon-remove {
   margin-right: -20px;
 }
 
-.tab_product .nav-tabs li {
-  border: 1px solid #e2e2e2;
+.tab_product .toggle-tabs li {
+  border: 1px solid #e2e2e2!important;
   margin-right: 5px;
   margin-bottom: -1px;
   position: relative;
 }
-.rtl .tab_product .nav-tabs li {
+.rtl .tab_product .toggle-tabs li {
   margin-left: 5px;
   margin-right: inherit;
 }
-.tab_product .nav-tabs li:before {
+.tab_product .toggle-tabs li:before {
   content: "";
   display: block;
   height: 4px;
@@ -10689,13 +10689,13 @@ table.discount i.icon-remove {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
-.tab_product .nav-tabs li:hover, .tab_product .nav-tabs li.active {
+.tab_product .toggle-tabs li:hover, .tab_product .toggle-tabs li.current {
   border-bottom-color: #fff;
 }
-.tab_product .nav-tabs li:hover:before, .tab_product .nav-tabs li.active:before {
+.tab_product .toggle-tabs li:hover:before, .tab_product .toggle-tabs li.current:before {
   background-color: #000;
 }
-.tab_product .nav-tabs li a {
+.tab_product .toggle-tabs li a {
   font-size: 14px;
   font-weight: 400;
   padding: 10px 15px;
@@ -10703,25 +10703,25 @@ table.discount i.icon-remove {
 .tab_product .tab-content {
   border: 1px solid #e2e2e2;
 }
-.tab_product.tab_product1 .nav-tabs {
+.tab_product.tab_product1 .toggle-tabs {
   margin-right: -1px;
   z-index: 10;
 }
-.rtl .tab_product.tab_product1 .nav-tabs {
+.rtl .tab_product.tab_product1 .toggle-tabs {
   margin-left: -1px;
   margin-right: inherit;
 }
-.tab_product.tab_product1 .nav-tabs li {
+.tab_product.tab_product1 .toggle-tabs li {
   width: 100%;
 }
-.tab_product.tab_product1 .nav-tabs li:before {
+.tab_product.tab_product1 .toggle-tabs li:before {
   display: none;
 }
-.tab_product.tab_product1 .nav-tabs li:hover, .tab_product.tab_product1 .nav-tabs li.active {
+.tab_product.tab_product1 .toggle-tabs li:hover, .tab_product.tab_product1 .toggle-tabs li.current {
   border-right: 1px solid white;
   border-bottom-color: #e2e2e2;
 }
-.rtl .tab_product.tab_product1 .nav-tabs li:hover, .rtl .tab_product.tab_product1 .nav-tabs li.active {
+.rtl .tab_product.tab_product1 .toggle-tabs li:hover, .rtl .tab_product.tab_product1 .toggle-tabs li.current {
   border-left: 1px solid white;
   border-right: inherit;
 }
