@@ -8679,19 +8679,19 @@ table.table_block td {
   text-align: left;
 }
 .content_sortPagiBar .sortPagiBar #productsSortForm .select {
-  height: 30px;
-  border: 1px solid #e2e2e2;
-  position: relative;
+  height: 30px!important;
+  border: 1px solid #e2e2e2!important;
+  position: relative!important;
 }
 .content_sortPagiBar .sortPagiBar #productsSortForm .select:before {
-  height: 0;
-  width: 0;
-  right: 5%;
-  top: 37%;
-  content: "";
-  position: absolute;
-  border: 4px solid transparent;
-  border-top-color: #e2e2e2;
+  height: 0!important;
+  width: 0!important;
+  right: 5%!important;
+  top: 37%!important;
+  content: ""!important;
+  position: absolute!important;
+  border: 4px solid transparent!important;
+  border-top-color: #e2e2e2!important;
 }
 .rtl .content_sortPagiBar .sortPagiBar #productsSortForm .select:before {
   left: 5%;
@@ -10738,11 +10738,11 @@ table.discount i.icon-remove {
 }
 
 .price {
-  font-size: 17px;
-  color: black;
+  font-size: 17px!important;
+  color: black!important;
   font-weight: 400;
-  white-space: nowrap;
-  font-family: "Raleway", sans-serif;
+  white-space: nowrap!important;
+  font-family: "Raleway", sans-serif!important;
 }
 
 .price-percent-reduction {
@@ -10769,13 +10769,14 @@ table.discount i.icon-remove {
 .content_price .new_price, .content_price .column .block .products-block .price-box .new_price, .column .block .products-block .price-box .content_price .new_price {
   background-color: #e94954;
 }
-.content_price .old-price {
-  color: #949494;
-  text-decoration: line-through;
-  font-size: 13px;
-  line-height: 13px;
-  padding: 3px 5px;
-  font-weight: 400;
+.content_price .old-price .price{
+  color: #949494!important;
+  text-decoration: line-through!important;
+  font-size: 13px!important;
+  line-height: 13px!important;
+  padding: 3px 5px!important;
+  font-weight: 400!important;
+  background-color:white!important;
 }
 .content_price .special-price {
   color: white;

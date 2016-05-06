@@ -28,5 +28,9 @@ $j(window).load(function(){
         event.preventDefault();
         if ($j('#qty').val() > 0) $j('#qty').val(+$j('#qty').val() - 1);
     });
+
+    if($j('#selectProductSort').length){
+        $j('#selectProductSort').uniform();
+    }
 });
 

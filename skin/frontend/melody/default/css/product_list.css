@@ -355,7 +355,7 @@ Product list(Grid) Styles
 .product_list.grid .ajax_block_product .product-container .content_price .price {
   background-color: #868686;
   padding: 5px 15px;
-  color: white;
+  color: white!important;
 }
 .product_list.grid .ajax_block_product .product-container .content_price .old-price {
   display: block;

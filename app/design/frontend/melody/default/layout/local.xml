@@ -12,6 +12,7 @@
                  <action method="addItem"><type>skin_js</type><name>js/owl.carousel.js</name></action>
                  <action method="addItem"><type>skin_js</type><name>js/jquery.nivo.slider.js</name></action>
                  <action method="addItem"><type>skin_js</type><name>js/custom.js</name></action>
+                 <action method="addItem"><type>skin_js</type><name>js/jquery.uniform.min.js</name></action>
                  <action method="addCss"><stylesheet>facybox/jquery.fancybox.css</stylesheet></action>
                  <action method="addCss"><stylesheet>css/global.css</stylesheet></action>
                  <action method="addCss"><stylesheet>css/category.css</stylesheet></action>
@@ -23,6 +24,7 @@
                  <action method="addCss"><stylesheet>css/product.css</stylesheet></action>
                  <action method="addCss"><stylesheet>css/productcomments.css</stylesheet></action>
                  <action method="addCss"><stylesheet>css/blockwishlist.css</stylesheet></action>
+                 <action method="addCss"><stylesheet>css/uniform.default.css</stylesheet></action>
              </reference>
             <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
             <action method="setIsHandle"><applied>1</applied></action>

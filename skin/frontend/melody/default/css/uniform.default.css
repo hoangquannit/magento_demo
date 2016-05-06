@@ -1,0 +1,207 @@
+/*
+
+Uniform Theme: Uniform Default
+Version: 1.8
+By: Josh Pyles
+License: MIT License
+---
+For use with the Uniform plugin:
+http://uniformjs.com/
+
+*/
+/* General settings */
+div.selector, div.selector span, div.checker span, div.radio span, div.uploader, div.uploader span.action, div.button, div.button span {
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased; }
+div.selector, div.checker, div.button, div.radio, div.uploader {
+  display: -moz-inline-box;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: middle;
+  /* Keeping this as :focus to remove browser styles */ }
+  div.selector:focus, div.checker:focus, div.button:focus, div.radio:focus, div.uploader:focus {
+    outline: 0; }
+div.selector, div.selector *, div.radio, div.radio *, div.checker, div.checker *, div.uploader, div.uploader *, div.button, div.button * {
+  margin: 0;
+  padding: 0; }
+
+/* validate*/
+div.selector .validation-advice, div.radio .validation-advice,  div.checker .validation-advice {
+    margin-top: 5px;
+    }
+
+/* Remove default webkit and possible mozilla .search styles.
+ * Keeping this as :active to remove browser styles */
+div.checker input,
+input[type="search"],
+input[type="search"]:active {
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+/* Select */
+div.selector {
+    padding: 0 0;
+    position: relative;
+    width: 100% !important;
+
+}
+div.selector:before{
+    content: "";
+    /*background: url(../images/uniform/select-arrow@2x.png) 100% -1px no-repeat;*/
+    background-size: 48px auto;
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    right:0px;
+    cursor: pointer;
+}
+div.selector span {
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 48px;
+    line-height: 48px;
+    cursor: pointer;
+    width: 100% !important;
+    display: block;
+    border: #e5e5e5 1px solid;
+    position: relative;
+    font-size: 15px;
+    padding: 0 10px;
+    color: #666;
+    padding-right: 45px;
+    cursor: pointer;
+}
+
+
+div.selector select {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    border: none;
+    background: none;
+    position: absolute;
+    height: 40px;
+    top: 2px;
+    left: 0px;
+    width: 100%;
+    cursor: pointer;
+}
+div.selector.selector-validation-failed span{
+    border-color: #df280a;
+}
+
+/* Checkbox */
+
+    div.checker {
+        position: relative;
+    }
+    div.checker, div.checker span, div.checker input {
+        width: 30px;
+        height: 30px;
+    }
+    div.checker span {
+        display: -moz-inline-box;
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        text-align: center;
+        background: #fff;
+        border: #ddd 1px solid;
+
+    }
+    div.checker span.checked {
+        /*background: url(../images/uniform/checked.png) 50% 50% no-repeat;*/
+    }
+    div.checker input {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        -moz-opacity: 0;
+        border: none;
+        background: none;
+        display: -moz-inline-box;
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        margin: 0 !important;
+        padding: 0 !important;
+        float: none;
+    }
+    div.radio + label,div.checker + label{
+        margin: 0 !important;padding: 0 !important;
+        color: #999999 !important;
+        font-family: "arial", sans-serif !important;
+        font-size: 13px !important;
+        min-width: inherit !important;
+        width: auto !important;
+    }
+
+/* Radio */
+    div.radio {
+        position: relative;
+    }
+    div.radio, div.radio span, div.radio input {
+        width: 30px;
+        height: 30px;
+    }
+    div.radio span {
+        display: -moz-inline-box;
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        text-align: center;
+        border: #ddd 1px solid;
+        background: #fff;
+        border-radius: 30px;
+        /*background-position: 0 100%;*/
+        /*background-image: url(../images/thk/bg-radio.png);*/
+        /*background-size: 20px auto;*/
+    }
+    div.radio span.checked {
+        text-align: center;
+    }
+    div.radio span.checked:before{
+        content: "";
+        background: #292a6f;
+        width: 10px;
+        height: 10px;
+        border-radius: 6px;
+        display: inline-block;
+    }
+
+    div.radio input {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        -moz-opacity: 0;
+        border: none;
+        background: none;
+        display: -moz-inline-box;
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        text-align: center;
+        margin: 0 !important;
+        padding: 0 !important;
+        float: none;
+
+    }
+
+
+
+/* PRESENTATION */
+
+/* Select */
+
+/* Checker */
+div.checker {
+  margin-right: 6px; }
+
+/* Radio */
+div.radio {
+  margin-right: 9px; }
+
+
