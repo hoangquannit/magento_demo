@@ -72,7 +72,6 @@
                 <div class="select selector1">
                     <label for="selectProductSort"><?php echo $this->__('Sort By') ?></label>
                     <select id="selectProductSort" class="selectProductSort form-control" onchange="setLocation(this.value)" title="<?php echo $this->__('Sort By') ?>">
-                        <option value="position:asc" selected="selected">--</option>
                         <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
                             <option value="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if($this->isOrderCurrent($_key)): ?> selected="selected"<?php endif; ?>>
                                 <?php echo $this->__($_order) ?>
