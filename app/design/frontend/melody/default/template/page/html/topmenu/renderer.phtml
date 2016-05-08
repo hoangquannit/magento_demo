@@ -58,10 +58,10 @@ foreach ($children as $child) {
     }
 
     $nextChildLevel = $childLevel + 1;
-
+    $staticBlock = trim($this->getLayout()->createBlock('cms/block')->setBlockId('test')->toHtml());
     if (!empty($_hasChildren)) {
         $html .= '<ul class="level'. $childLevel .'">';
-        $html .=     $this->render($child, $childrenWrapClass);
+        $html .=     $staticBlock;
         $html .= '</ul>';
     }
 

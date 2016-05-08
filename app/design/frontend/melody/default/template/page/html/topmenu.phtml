@@ -36,7 +36,8 @@
 <?php if($_menu): ?>
  <div class="megamenu-container clearfix">
     <div class="container">
-    <nav id="nav" class="navbar navbar-default">
+    <nav id="nav" class="navbar navbar-default menu ">
+        <div id="megamenu" class="vel-megamenu clearfix">
         <ol class="nav-primary">
             <li class="level0 nav-1 home">
                 <a href="<?php echo Mage::helper('core/url')->getHomeUrl(); ?>"><?php echo $this->__('Home'); ?></a>
@@ -44,6 +45,7 @@
             <?php echo $_menu ?>
             <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('navigation_link_cms')->toHtml() ?>
         </ol>
+        </div>
     </nav>
     </div>
  </div>
