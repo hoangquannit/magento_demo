@@ -870,3 +870,8 @@ div.selector span{
     height: 30px!important;
     border: none!important;
 }
+.product-desc{
+    color: #777777!important;
+    font-family: "Raleway", sans-serif!important;
+}
+.product-name a{ color: black!important;}

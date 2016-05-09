@@ -50,6 +50,21 @@
                 </div>
 <!--                end will add static block -->
             </div>
+            <div class="header-minicart vel-cart clearfix">
+                <div class="shopping_cart btn-group">
+                    <?php echo $this->getChildHtml('minicart_head'); ?>
+                </div>
+            </div>
+
+
+            <div id="header_user" class="btn-group">
+                <div class="current">
+                    <span class="icon icon-user"></span>
+                </div>
+            </div>
+
+            <?php echo $this->getChildHtml('currency_switcher') ?>
+
             <div id="search_block_top" class="style1 btn-group">
                 <span class="current"><i class="icon icon-search"></i></span>
 <!--                <div id="header-search" class="skip-content">-->
@@ -87,22 +102,6 @@
                 <span class="icon"></span>
                 <span class="label"><?php echo $this->__('Search'); ?></span>
             </a>
-
-            <div class="account-cart-wrapper">
-                <?php echo $this->getChildHtml('currency_switcher') ?>
-                <div id="header_user" class="btn-group">
-                    <div class="current">
-                            <span class="icon icon-user"></span>
-                    </div>
-                </div>
-
-                <!-- Cart -->
-
-                <div class="header-minicart vel-cart clearfix">
-                    <?php echo $this->getChildHtml('minicart_head'); ?>
-                </div>
-            </div>
-
 
         </div>
 
