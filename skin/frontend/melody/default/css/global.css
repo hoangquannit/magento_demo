@@ -11360,6 +11360,13 @@ ul.dropdown-menu > li > a:hover, ul.dropdown-menu > li > a:focus{
     color: #e91e63!important;
     background-color: #222222!important;
 }
+.vel-megamenu .nav-primary > li.parent > a:after{
+    display: inline-block;
+    content: "\f107";
+    font-family: "FontAwesome";
+    float: right;
+    margin-left: 5px;
+}
 @media (min-width: 769px) {
     .vel-megamenu .nav-primary > li:focus > .dropdown-menu,
     .vel-megamenu .nav-primary > li:hover > .dropdown-menu {
@@ -11382,11 +11389,5 @@ ul.dropdown-menu > li > a:hover, ul.dropdown-menu > li > a:focus{
     }
 }
 
-.vel-megamenu .nav-primary > li.parent > a:after{
-    display: inline-block;
-    content: "\f107";
-    font-family: "FontAwesome";
-    float: right;
-    margin-left: 5px;
-}
+
 
