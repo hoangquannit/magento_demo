@@ -905,3 +905,7 @@ div.selector span{
         animation-name: hovermenu;
     }
 }
+div.checker, div.checker span, div.checker input{
+    width: 15px!important;
+    height: 15px!important;
+}
