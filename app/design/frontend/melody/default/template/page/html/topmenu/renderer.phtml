@@ -41,6 +41,12 @@ $parentPositionClass = $menuTree->getPositionClass();
 $itemPositionClassPrefix = $parentPositionClass ? $parentPositionClass . '-' : 'nav-';
 
 foreach ($children as $child) {
+
+    $_category = Mage::getModel('catalog/category')->load($child->getCateId());
+    $attribute = Mage::getSingleton('eav/config')->getAttribute('catalog_category','type_dropdown_menu');
+
+    $type_menu = $attribute->getSource()->getOptionText($_category->getTypeDropdownMenu());
+
     $child->setLevel($childLevel);
     $child->setIsFirst($counter == 1);
     $child->setIsLast($counter == $childrenCount);
@@ -58,9 +64,16 @@ foreach ($children as $child) {
     }
 
     $nextChildLevel = $childLevel + 1;
-    $staticBlock = trim($this->getLayout()->createBlock('cms/block')->setBlockId('test')->toHtml());
+    if(strpos(strtolower($type_menu),'child') || $type_menu==null ) $class_default = 'dropdown-menu';
+    if(strpos(strtolower($type_menu),'sale')){
+        $staticBlock = trim($this->getLayout()->createBlock('cms/block')->setBlockId('test')->toHtml());
+    }elseif(strpos(strtolower($type_menu),'list')){
+        $staticBlock = trim($this->getLayout()->createBlock('cms/block')->setBlockId('test2')->toHtml());
+    }else{
+        $staticBlock = $this->render($child, $childrenWrapClass);
+    }
     if (!empty($_hasChildren)) {
-        $html .= '<ul class="level'. $childLevel .'">';
+        $html .= '<ul class="level'. $childLevel .' '.$class_default.'">';
         $html .=     $staticBlock;
         $html .= '</ul>';
     }

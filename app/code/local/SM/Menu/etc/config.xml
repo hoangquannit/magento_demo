@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <SM_Menu>
+      <version>0.1.0</version>
+    </SM_Menu>
+  </modules>
+  <global>
+      <blocks>
+          <menu>
+              <class>SM_Menu_Block</class>
+          </menu>
+          <page>
+              <rewrite>
+                  <html_topmenu>SM_Menu_Block_Page_Html_Topmenu</html_topmenu>
+              </rewrite>
+          </page>
+      </blocks>
+    <helpers>
+      <menu>
+        <class>SM_Menu_Helper</class>
+      </menu>
+    </helpers>
+
+      <models>
+          <menu>
+              <class>SM_Menu_Model</class>
+              <resourceModel>menu_mysql4</resourceModel>
+          </menu>
+          <catalog>
+              <rewrite>
+                  <observer>SM_Menu_Model_Catalog_Observer</observer>
+              </rewrite>
+          </catalog>
+      </models>
+    <resources>
+      <sm_menu_setup>
+          <setup>
+              <module>SM_Menu</module>
+              <class>SM_Menu_Model_Resource_Setup</class>
+          </setup>
+      </sm_menu_setup>
+    </resources>
+  </global>
+</config> 
