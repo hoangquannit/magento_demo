@@ -31,8 +31,8 @@
         <div class="block_content">
         <p><?php echo $this->__('Be the first to find out about new collections private sales');?></p>
             <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
-                    <div class=""form-group form-error">
-                       <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="inputNew form-control grey newsletter-input input-text required-entry validate-email" />
+                    <div class="form-group form-error">
+                       <input type="email" autocapitalize="off" autocorrect="off" placeholder="Enter your e-mail" spellcheck="false" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="inputNew form-control grey newsletter-input input-text required-entry validate-email" />
                         <button type="submit" title="<?php echo $this->__('Subscribe') ?>" class="btn button button-small"><span class="icon icon-envelope-alt"></span><?php echo $this->__('Subscribe') ?></button>
                     </div>
             </form>
