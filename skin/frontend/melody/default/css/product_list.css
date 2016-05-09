@@ -875,3 +875,33 @@ div.selector span{
     font-family: "Raleway", sans-serif!important;
 }
 .product-name a{ color: black!important;}
+.toolbar-top .pager{display: none;}
+.toolbar-bottom .sortPagiBar {display: none}
+.vel-megamenu .nav-primary > li.parent > a:after{
+    display: inline-block;
+    content: "\f107";
+    font-family: "FontAwesome";
+    float: right;
+    margin-left: 5px;
+}
+@media (min-width: 769px) {
+    .vel-megamenu .nav-primary > li:focus > .dropdown-menu,
+    .vel-megamenu .nav-primary > li:hover > .dropdown-menu {
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.4s;
+        animation-timing-function: ease-in;
+        -webkit-animation-timing-function: ease-in;
+        -webkit-animation-name: hovermenu;
+        animation-name: hovermenu;
+    }
+
+    .vel-megamenu .nav-primary > li:focus > ul .dropdown-menu,
+    .vel-megamenu .nav-primary > li:hover > ul .dropdown-menu {
+        -webkit-animation-duration: 0.4s;
+        animation-duration: 0.4s;
+        animation-timing-function: ease-in;
+        -webkit-animation-timing-function: ease-in;
+        -webkit-animation-name: hovermenu;
+        animation-name: hovermenu;
+    }
+}

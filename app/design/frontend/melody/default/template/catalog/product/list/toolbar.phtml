@@ -82,7 +82,10 @@
             </div>
         </div>
     <?php endif; ?>
-    <div class="pager">
+    <div class="pager content_sortPagiBar">
+        <div class="bottom-pagination-content clearfix">
+            <?php echo $this->getPagerHtml() ?>
+        </div>
         <div class="count-container">
             <?php if($this->getLastPageNum()>1): ?>
                 <p class="amount amount--has-pages">
@@ -106,7 +109,6 @@
             </div>
         </div>
 
-        <?php echo $this->getPagerHtml() ?>
 
     </div>
     </div>
